@@ -10,8 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.tableFooterView = UIView()
+        }
+    }
+    let refreshControl = UIRefreshControl()
     let dataSource = DataSource()
     
     
@@ -19,6 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100.0
+        setupRefreshControl()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -26,6 +31,16 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         
+    }
+    
+    func setupRefreshControl() {
+        refreshControl.addTarget(self, action: #selector(referesh), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+    }
+    
+    @objc func referesh() {
+        tableView.reloadData()
+        refreshControl.endRefreshing()
     }
     
     @IBAction func touchNewTask(_ sender: UIButton) {
@@ -180,12 +195,11 @@ protocol CreatorDelegete {
     
     func addDate(setDate date: String)
     
-    func updateData(set ob: Any)
+    func tableViewReload()
 }
 
 extension ViewController: CreatorDelegete{
-    func updateData(set ob: Any) {
-        dataSource.updateData(setData: ob)
+    func tableViewReload() {
         tableView.reloadData()
     }
 

@@ -1,148 +1,103 @@
 //
-//  DataSource.swift
+//  DataSorceR.swift
 //  TrainingToDoList
 //
-//  Created by Aleksey Martoyas on 13.07.17.
+//  Created by Aleksey Martoyas on 18.07.17.
 //  Copyright © 2017 Aleksey Martoyas. All rights reserved.
 //
 
-import UIKit
 import Foundation
+import UIKit
 
 class DataSource {
-    let defaults = UserDefaults.standard
-    var arHeaderText: [HeaderText]?
-    var arImageHeader: [ImageHeader]?
-    var arDate: [Date]?
-    var nextHeaderText = 0
-    var nextImageHeader = 0
-    var nextDate = 0
-    
-    init() {
-//        clean()
-        loadFromDefaults()
-        subscribeForNotifications()
+    let repositorySerivice = RepositoryService()
+    var arHeaderText: [HeaderText]? {
+        get {
+            guard let inputData = repositorySerivice.get(type: HeaderText.self) else { return nil }
+            return inputData
+        }
+        set(newElem) {
+            repositorySerivice.save(object: newElem!)
+        }
+    }
+    var arImageHeader: [ImageHeader]? {
+        get {
+            guard let inputData = repositorySerivice.get(type: ImageHeader.self) else { return nil }
+            return inputData
+        }
+        set(newElem) {
+            repositorySerivice.save(object: newElem!)
+        }
+    }
+    var arDate: [Date]? {
+        get {
+            guard let inputData = repositorySerivice.get(type: Date.self) else { return nil }
+            return inputData
+        }
+        set(newElem) {
+            repositorySerivice.save(object: newElem!)
+        }
     }
     
     func clean() {
-        defaults.removeObject(forKey: "ArHeaderText")
-        defaults.removeObject(forKey: "ArImageHeader")
-        defaults.removeObject(forKey: "ArDate")
+        repositorySerivice.clean()
     }
     
     func generate() -> String {
         return NSUUID().uuidString
     }
     
-    @objc func loadFromDefaults() {
-        
-        if let inputData = defaults.object(forKey: "ArHeaderText") as? [Data] {
-            arHeaderText = inputData.map { HeaderText(data: $0)! }
-        }
-        if arHeaderText == nil {
-            arHeaderText = [HeaderText]()
-        }
-        
-        if let inputData = defaults.object(forKey: "ArImageHeader") as? [Data] {
-            arImageHeader = inputData.map { ImageHeader(data: $0)! }
-        }
-        if arImageHeader == nil {
-            arImageHeader = [ImageHeader]()
-        }
-        
-        if let inputData = defaults.object(forKey: "ArDate") as? [Data] {
-            arDate = inputData.map { Date(data: $0)! }
-        }
-        if arDate == nil {
-            arDate = [Date]()
-        }
+    func convertImageToData(convert img: UIImage) -> Data {
+        return UIImagePNGRepresentation(img)!
     }
     
-    func subscribeForNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(saveToDefault), name: NSNotification.Name(rawValue: "NEED_TO_SAVE_DATA"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(loadFromDefaults), name: NSNotification.Name(rawValue: "NEED_TO_LOAD_DATA"), object: nil)
+    func convertDataToImage(convert dataI: Data) -> UIImage {
+        return UIImage(data: dataI, scale:1.0)!
     }
     
     //Push
-    
     func pushData(push header: String, push text: String) {
-        arHeaderText?.append(HeaderText(set: header, set: text, setId: generate()))
+        let pushingHT = HeaderText()
+        pushingHT.headerLabel = header
+        pushingHT.textLabel = text
+        pushingHT.id = generate()
+        arHeaderText = [pushingHT]
     }
-    
+
     func pushData(push header: String, push img: UIImage) {
-        arImageHeader?.append(ImageHeader(set: header, set: img, setId: generate()))
+        let pushingIH = ImageHeader()
+        pushingIH.headerLabel = header
+        pushingIH.image = convertImageToData(convert: img)
+        pushingIH.id = generate()
+        arImageHeader = [pushingIH]
     }
-    
+
     func pushData(push date: String) {
-        arDate?.append(Date(set: date, setId: generate()))
+        let pushingDT = Date()
+        pushingDT.dateLabel = date
+        pushingDT.id = generate()
+        arDate = [pushingDT]
     }
     
     //Update
-    
     func updateData(setData data: Any) {
-        if let ht = data as? HeaderText,
-            let index = arHeaderText?.index(of: ht) {
-            arHeaderText?[index] = ht
-        } else if let ih = data as? ImageHeader,
-            let index = arImageHeader?.index(of: ih) {
-            arImageHeader?[index] = ih
-        } else if let d = data as? Date,
-            let index = arDate?.index(of: d) {
-            arDate?[index] = d
+        if let headerText = data as? HeaderText {
+            repositorySerivice.save(object: headerText)
+        } else if let imageHeader = data as? ImageHeader {
+            repositorySerivice.save(object: imageHeader)
+        } else if let date = data as? Date {
+            repositorySerivice.save(object: date)
         }
-    }
-    
-    //Save
-    
-    @objc func saveToDefault() {
-        if let unwrappedAr = arHeaderText {
-            let encoded = unwrappedAr.map { $0.encode() }
-            defaults.set(encoded, forKey: "ArHeaderText")
-        }
-        
-        if let unwrappedAr = arImageHeader {
-            let encoded = unwrappedAr.map { $0.encode() }
-            defaults.set(encoded, forKey: "ArImageHeader")
-        }
-        
-        if let unwrappedAr = arDate {
-            let encoded = unwrappedAr.map { $0.encode() }
-            defaults.set(encoded, forKey: "ArDate")
-        }
-        
-        defaults.synchronize()
     }
     
     //Delete
-    
-//    func delete(ar name: String, at element: Int) {
-//        switch name {
-//        case "ArHeaderText":
-//            arHeaderText?.remove(at: element)
-//        case "ArImageHeader":
-//            arImageHeader?.remove(at: element)
-//        case "ArDate":
-//            arDate?.remove(at: element)
-//        default:
-//            return
-//        }
-//    }
-    
     func delete(setOb obForDel: Any) {
-        if let ht = obForDel as? HeaderText,
-            let index = arHeaderText?.index(of: ht) {
-            arHeaderText?.remove(at: index)
-        } else if let ih = obForDel as? ImageHeader,
-            let index = arImageHeader?.index(of: ih) {
-            arImageHeader?.remove(at: index)
-        } else if let d = obForDel as? Date,
-            let index = arDate?.index(of: d) {
-            arDate?.remove(at: index)
+        if let headerText = obForDel as? HeaderText {
+            repositorySerivice.remove(object: headerText)
+        } else if let imageHeader = obForDel as? ImageHeader {
+            repositorySerivice.remove(object: imageHeader)
+        } else if let date = obForDel as? Date {
+            repositorySerivice.remove(object: date)
         }
-    }
-    
-    deinit {
-        saveToDefault()
-        NotificationCenter.default.removeObserver(self)
     }
 }

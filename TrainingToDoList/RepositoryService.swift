@@ -51,7 +51,7 @@ class RepositoryService {
             })
             return resultArray
         } catch {
-            print("### error getting object to Realm")
+            print("### error getting object from Realm")
             return nil
         }
     }
@@ -67,7 +67,7 @@ class RepositoryService {
                 return filtered[0]
             }
         } catch {
-            print("### error getting object to Realm")
+            print("### error getting object from Realm")
             return nil
         }
     }
@@ -79,7 +79,7 @@ class RepositoryService {
                 realm.delete(object)
             }
         } catch {
-            print("### error removing object to Realm")
+            print("### error removing object from Realm")
         }
     }
 
@@ -90,7 +90,7 @@ class RepositoryService {
                 realm.delete(object)
             }
         } catch {
-            print("### error removing object to Realm")
+            print("### error removing object from Realm")
         }
     }
     
@@ -101,7 +101,7 @@ class RepositoryService {
                 realm.deleteAll()
             }
         } catch {
-            print("### error removing all objects to Realm")
+            print("### error removing all objects from Realm")
         }
     }
 

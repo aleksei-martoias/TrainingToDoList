@@ -21,10 +21,9 @@ class HeaderTextViewController: UIViewController {
     @IBAction func done(_ sender: UIBarButtonItem) {
         if let headerText = headerTitle.text,
             let text = textUI.text {
-            if var editingOb = editOb {
-                editingOb.headerLabel = headerText
-                editingOb.textLabel = text
-                creatorDelegate?.updateData(set: editingOb)
+            if editOb != nil {
+                editOb?.update(field: headerText, text)
+                creatorDelegate?.tableViewReload()
             } else {
                 creatorDelegate?.addHeaderText(setHeader: headerText, setText: text)
             }
@@ -38,9 +37,9 @@ class HeaderTextViewController: UIViewController {
         super.viewDidLoad()
         scrollView.addGestureRecognizer(gesture)
         
-        if let setData = editOb {
-            headerTitle.text = setData.headerLabel
-            textUI.text = setData.textLabel
+        if editOb != nil {
+            headerTitle.text = editOb?.headerLabel
+            textUI.text = editOb?.textLabel
         }
     }
 

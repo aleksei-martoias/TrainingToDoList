@@ -33,7 +33,7 @@ class PhotoViewCell: UITableViewCell {
     func setTask(set element: Int, setDataSource dataSource: DataSource) {
         if dataSource.arImageHeader != nil && (dataSource.arImageHeader?.count)! > element {
             headerOfTask.text = dataSource.arImageHeader?[element].headerLabel
-            img.image = dataSource.arImageHeader?[element].image
+            img.image = UIImage(data: (dataSource.arImageHeader?[element].image)!, scale:1.0)!
         }
     }
 }

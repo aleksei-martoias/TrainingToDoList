@@ -34,9 +34,9 @@ class DateViewController: UIViewController {
     
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
         if let data = titleField.text {
-            if var editingOb = editOb {
-                editingOb.dateLabel = data
-                creatorDelegate?.updateData(set: editingOb)
+            if editOb != nil {
+                editOb?.update(field: data)
+                creatorDelegate?.tableViewReload()
             } else {
                 creatorDelegate?.addDate(setDate: data)
             }
@@ -51,8 +51,8 @@ class DateViewController: UIViewController {
         changeKeyboard()
         datePickerUI.locale = NSLocale(localeIdentifier: "fr_SN") as Locale
         
-        if let setDate = editOb {
-            titleField.text = setDate.dateLabel
+        if editOb != nil {
+            titleField.text = editOb?.dateLabel
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd MMM yyyy | HH:mm"
             datePickerUI.setDate(dateFormatter.date(from: titleField.text!)!, animated: true)

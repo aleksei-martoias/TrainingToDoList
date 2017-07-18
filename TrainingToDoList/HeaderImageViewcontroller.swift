@@ -20,10 +20,9 @@ class HeaderImageViewcontroller: UIViewController {
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
         if let headerText = titleField.text,
             let img = imageView.image {
-            if var editingOb = editOb {
-                editingOb.headerLabel = headerText
-                editingOb.image = img
-                creatorDelegate?.updateData(set: editingOb)
+            if editOb != nil {
+                editOb?.update(field: headerText, UIImagePNGRepresentation(img)!)
+                creatorDelegate?.tableViewReload()
             } else {
                 creatorDelegate?.addImageHeader(setHeader: headerText, setImage: img)
             }
@@ -41,9 +40,9 @@ class HeaderImageViewcontroller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let setData = editOb {
-            titleField.text = setData.headerLabel
-            imageView.image = setData.image
+        if editOb != nil {
+            titleField.text = editOb?.headerLabel
+            imageView.image = UIImage(data: (editOb?.image)!, scale:1.0)!
         }
     }
 
