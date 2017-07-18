@@ -10,6 +10,8 @@ import UIKit
 
 class HeaderImageViewcontroller: UIViewController {
     var creatorDelegate: CreatorDelegete?
+    
+    var editOb: ImageHeader?
 
     @IBOutlet weak var titleField: UITextField!
     
@@ -18,7 +20,13 @@ class HeaderImageViewcontroller: UIViewController {
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
         if let headerText = titleField.text,
             let img = imageView.image {
-            creatorDelegate?.addImageHeader(setHeader: headerText, setImage: img)
+            if var editingOb = editOb {
+                editingOb.headerLabel = headerText
+                editingOb.image = img
+                creatorDelegate?.updateData(set: editingOb)
+            } else {
+                creatorDelegate?.addImageHeader(setHeader: headerText, setImage: img)
+            }
         }
         
         navigationController?.popViewController(animated: true)
@@ -33,7 +41,10 @@ class HeaderImageViewcontroller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let setData = editOb {
+            titleField.text = setData.headerLabel
+            imageView.image = setData.image
+        }
     }
 
     override func didReceiveMemoryWarning() {

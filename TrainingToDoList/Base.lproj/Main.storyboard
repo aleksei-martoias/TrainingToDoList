@@ -72,7 +72,7 @@
                                         <rect key="frame" x="0.0" y="97" width="311" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="lRn-Ab-p1h" id="h2C-Nf-fCA">
-                                            <rect key="frame" x="0.0" y="0.0" width="311" height="124.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="311" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pH2-hT-GO5">
@@ -83,7 +83,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bmw-na-6eE">
-                                                    <rect key="frame" x="166" y="52" width="137" height="20.5"/>
+                                                    <rect key="frame" x="166" y="52" width="137" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -318,7 +318,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dvC-Wa-qrB">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите дату" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dvC-Wa-qrB">
                                 <rect key="frame" x="26" y="120" width="323" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -340,12 +340,36 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="datePickerUI" destination="GPg-2a-lP0" id="Lul-GW-J3h"/>
                         <outlet property="titleField" destination="dvC-Wa-qrB" id="gHC-nn-L4H"/>
+                        <outlet property="toolBarUI" destination="ZIb-FY-ntn" id="s3X-yQ-vE1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4s5-G2-5EI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ZIb-FY-ntn">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem systemItem="flexibleSpace" id="rZ7-Rz-qpb"/>
+                        <barButtonItem systemItem="done" id="rSa-vg-DaQ">
+                            <connections>
+                                <action selector="doneButtonTB:" destination="Gfv-kc-eK1" id="mVb-Ns-gNn"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" id="GPg-2a-lP0">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <date key="date" timeIntervalSinceReferenceDate="521968247.52560502">
+                        <!--2017-07-17 07:10:47 +0000-->
+                    </date>
+                    <connections>
+                        <action selector="datePickChange:" destination="Gfv-kc-eK1" eventType="valueChanged" id="MoQ-PY-eID"/>
+                    </connections>
+                </datePicker>
             </objects>
-            <point key="canvasLocation" x="1481" y="896"/>
+            <point key="canvasLocation" x="1481" y="1146"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MSy-4e-tfI">

@@ -10,6 +10,7 @@ import UIKit
 
 class HeaderTextViewController: UIViewController {
     var creatorDelegate: CreatorDelegete?
+    var editOb: HeaderText?
     
     @IBOutlet weak var headerTitle: UITextField!
     
@@ -20,7 +21,13 @@ class HeaderTextViewController: UIViewController {
     @IBAction func done(_ sender: UIBarButtonItem) {
         if let headerText = headerTitle.text,
             let text = textUI.text {
+            if var editingOb = editOb {
+                editingOb.headerLabel = headerText
+                editingOb.textLabel = text
+                creatorDelegate?.updateData(set: editingOb)
+            } else {
                 creatorDelegate?.addHeaderText(setHeader: headerText, setText: text)
+            }
             }
         
         navigationController?.popViewController(animated: true)
@@ -30,7 +37,11 @@ class HeaderTextViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.addGestureRecognizer(gesture)
-        // Do any additional setup after loading the view.
+        
+        if let setData = editOb {
+            headerTitle.text = setData.headerLabel
+            textUI.text = setData.textLabel
+        }
     }
 
     override func didReceiveMemoryWarning() {

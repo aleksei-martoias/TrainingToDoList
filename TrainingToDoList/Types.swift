@@ -8,14 +8,19 @@
 
 import UIKit
 import Foundation
+import Realm
+import RealmSwift
 
 struct HeaderText {
-    let headerLabel: String
-    let textLabel: String
-    init(set header: String, set text: String) {
+    var headerLabel: String
+    var textLabel: String
+    var id: String?
+    init(set header: String, set text: String, setId sid: String) {
         headerLabel = header
         textLabel = text
+        id = sid
     }
+    
 }
 
 extension HeaderText {
@@ -59,12 +64,20 @@ extension HeaderText {
     }
 }
 
+extension HeaderText: Equatable {
+    public static func ==(lhs: HeaderText, rhs: HeaderText) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
+
 struct ImageHeader {
-    let headerLabel: String
-    let image: UIImage
-    init(set header: String, set img: UIImage) {
+    var headerLabel: String
+    var image: UIImage
+    var id: String?
+    init(set header: String, set img: UIImage, setId sid: String) {
         headerLabel = header
         image = img
+        id = sid
     }
 }
 
@@ -109,10 +122,18 @@ extension ImageHeader {
     }
 }
 
+extension ImageHeader: Equatable {
+    public static func ==(lhs: ImageHeader, rhs: ImageHeader) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
+
 struct Date {
-    let dateLabel: String
-    init(set date: String) {
+    var dateLabel: String
+    var id: String?
+    init(set date: String, setId sid: String) {
         dateLabel = date
+        id = sid
     }
 }
 
@@ -148,5 +169,11 @@ extension Date {
             aCoder.encode(dateLabel, forKey: "dateLabel")
         }
         
+    }
+}
+
+extension Date: Equatable {
+    public static func ==(lhs: Date, rhs: Date) -> Bool {
+        return lhs.id == rhs.id
     }
 }

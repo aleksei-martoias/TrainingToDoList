@@ -10,26 +10,62 @@ import UIKit
 
 class DateViewController: UIViewController {
     var creatorDelegate: CreatorDelegete?
+    
+    var editOb: Date?
+    
+    @IBOutlet weak var toolBarUI: UIToolbar!
 
     @IBOutlet weak var titleField: UITextField!
     
+    @IBOutlet weak var datePickerUI: UIDatePicker!
+    
+    @IBAction func datePickChange(_ sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy | HH:mm"
+        
+        let strDate = dateFormatter.string(from: datePickerUI.date)
+        titleField.text = strDate
+    }
+    
+    @IBAction func doneButtonTB(_ sender: UIBarButtonItem) {
+        datePickerUI.resignFirstResponder()
+        titleField.resignFirstResponder()
+    }
+    
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
         if let data = titleField.text {
-            creatorDelegate?.addDate(setDate: data)
+            if var editingOb = editOb {
+                editingOb.dateLabel = data
+                creatorDelegate?.updateData(set: editingOb)
+            } else {
+                creatorDelegate?.addDate(setDate: data)
+            }
+            navigationController?.popViewController(animated: true)
+        } else {
+            print("### No date!")
         }
-        
-        navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        changeKeyboard()
+        datePickerUI.locale = NSLocale(localeIdentifier: "fr_SN") as Locale
+        
+        if let setDate = editOb {
+            titleField.text = setDate.dateLabel
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM yyyy | HH:mm"
+            datePickerUI.setDate(dateFormatter.date(from: titleField.text!)!, animated: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    func changeKeyboard() {
+        titleField.inputView = datePickerUI
+        titleField.inputAccessoryView = toolBarUI
     }
     
 

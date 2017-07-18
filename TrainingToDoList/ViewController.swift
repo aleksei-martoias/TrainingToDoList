@@ -32,15 +32,15 @@ class ViewController: UIViewController {
         let alertController = UIAlertController(title: "Select task type", message: "Text, photo or date", preferredStyle: .actionSheet)
         
         alertController.addAction(UIAlertAction(title: "Add text task", style: .default) { _ in
-            self.performSegue(withIdentifier: "HeaderTextShow", sender: self)
+            self.performSegue(withIdentifier: "HeaderTextShow", sender: nil)
         })
         
         alertController.addAction(UIAlertAction(title: "Add photo task", style: .default) { _ in
-            self.performSegue(withIdentifier: "ImageHeaderShow", sender: self)
+            self.performSegue(withIdentifier: "ImageHeaderShow", sender: nil)
         })
         
         alertController.addAction(UIAlertAction(title: "Add date task", style: .default) { _ in
-            self.performSegue(withIdentifier: "DateSegue", sender: self)
+            self.performSegue(withIdentifier: "DateSegue", sender: nil)
         })
         
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -53,14 +53,23 @@ class ViewController: UIViewController {
         case "HeaderTextShow":
             if let targetVC = segue.destination as? HeaderTextViewController {
                 targetVC.creatorDelegate = self
+                if sender != nil {
+                    targetVC.editOb = sender as? HeaderText
+                }
             }
         case "ImageHeaderShow":
             if let targetVC = segue.destination as? HeaderImageViewcontroller {
                 targetVC.creatorDelegate = self
+                if sender != nil {
+                    targetVC.editOb = sender as? ImageHeader
+                }
             }
         case "DateSegue":
             if let targetVC = segue.destination as? DateViewController {
                 targetVC.creatorDelegate = self
+                if sender != nil {
+                    targetVC.editOb = sender as? Date
+                }
             }
         default:
             break
@@ -117,15 +126,34 @@ extension ViewController: UITableViewDataSource {
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.delete) {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (IndexPath) -> Void in
             switch indexPath.section {
             case 0:
-                dataSource.delete(ar: "ArHeaderText", at: indexPath.row)
+                self.performSegue(withIdentifier: "HeaderTextShow", sender: self.dataSource.arHeaderText?[indexPath.row])
             case 1:
-                dataSource.delete(ar: "ArImageHeader", at: indexPath.row)
+                self.performSegue(withIdentifier: "ImageHeaderShow", sender: self.dataSource.arImageHeader?[indexPath.row])
             case 2:
-                dataSource.delete(ar: "ArDate", at: indexPath.row)
+                self.performSegue(withIdentifier: "DateSegue", sender: self.dataSource.arDate?[indexPath.row])
+            default:
+                break
+            }
+        }
+        
+        let deleteAction = UITableViewRowAction(style: .default, title: "delete") { (IndexPath) -> Void in
+            switch indexPath.section {
+            case 0:
+                if let ht = self.dataSource.arHeaderText?[indexPath.row] {
+                    self.dataSource.delete(setOb: ht)
+                }
+            case 1:
+                if let ih = self.dataSource.arImageHeader?[indexPath.row] {
+                    self.dataSource.delete(setOb: ih)
+                }
+            case 2:
+                if let d = self.dataSource.arDate?[indexPath.row] {
+                    self.dataSource.delete(setOb: d)
+                }
             default:
                 return
             }
@@ -133,10 +161,9 @@ extension ViewController: UITableViewDataSource {
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
             self.tableView.endUpdates()
         }
+        
+        return [deleteAction, editAction]
     }
-    
-    //func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //}
 }
 
 extension ViewController: UITableViewDelegate {
@@ -152,9 +179,16 @@ protocol CreatorDelegete {
     func addImageHeader(setHeader header: String, setImage img: UIImage)
     
     func addDate(setDate date: String)
+    
+    func updateData(set ob: Any)
 }
 
 extension ViewController: CreatorDelegete{
+    func updateData(set ob: Any) {
+        dataSource.updateData(setData: ob)
+        tableView.reloadData()
+    }
+
     func addHeaderText(setHeader header: String, setText text: String) {
         dataSource.pushData(push: header, push: text)
         tableView.reloadData()
@@ -169,4 +203,8 @@ extension ViewController: CreatorDelegete{
         dataSource.pushData(push: date)
         tableView.reloadData()
     }
+}
+
+struct TransferDate {
+    
 }

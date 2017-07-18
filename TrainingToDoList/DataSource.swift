@@ -30,6 +30,10 @@ class DataSource {
         defaults.removeObject(forKey: "ArDate")
     }
     
+    func generate() -> String {
+        return NSUUID().uuidString
+    }
+    
     @objc func loadFromDefaults() {
         
         if let inputData = defaults.object(forKey: "ArHeaderText") as? [Data] {
@@ -61,76 +65,31 @@ class DataSource {
     
     //Push
     
-//    func pushData(push header: String, push text: String) {
-//        var ar: [HeaderText]?
-//        
-//        if let inputData = defaults.object(forKey: "ArHeaderText") as? [Data] {
-//            ar = inputData.map { HeaderText(data: $0)! }
-//        }
-//        if ar == nil {
-//            ar = [HeaderText(set: header, set: text)]
-//        } else {
-//            ar?.append(HeaderText(set: header, set: text))
-//        }
-//        
-//        arHeaderText = ar
-//        
-//        guard let unwrappedAr = ar else { return }
-//        let encoded = unwrappedAr.map { $0.encode() }
-//        defaults.set(encoded, forKey: "ArHeaderText")
-//        defaults.synchronize()
-//    }
-//    
-//    func pushData(push header: String, push img: UIImage) {
-//        var ar: [ImageHeader]?
-//        
-//        if let inputData = defaults.object(forKey: "ArImageHeader") as? [Data] {
-//            ar = inputData.map { ImageHeader(data: $0)! }
-//        }
-//        if ar == nil {
-//            ar = [ImageHeader(set: header, set: img)]
-//        } else {
-//            ar?.append(ImageHeader(set: header, set: img))
-//        }
-//        
-//        arImageHeader = ar
-//        
-//        guard let unwrappedAr = ar else { return }
-//        let encoded = unwrappedAr.map { $0.encode() }
-//        defaults.set(encoded, forKey: "ArImageHeader")
-//        defaults.synchronize()
-//    }
-//    
-//    func pushData(push date: String) {
-//        var ar: [Date]?
-//        
-//        if let inputData = defaults.object(forKey: "ArDate") as? [Data] {
-//            ar = inputData.map { Date(data: $0)! }
-//        }
-//        if ar == nil {
-//            ar = [Date(set: date)]
-//        } else {
-//            ar?.append(Date(set: date))
-//        }
-//        
-//        arDate = ar
-//        
-//        guard let unwrappedAr = ar else { return }
-//        let encoded = unwrappedAr.map { $0.encode() }
-//        defaults.set(encoded, forKey: "ArDate")
-//        defaults.synchronize()
-//    }
-    
     func pushData(push header: String, push text: String) {
-        arHeaderText?.append(HeaderText(set: header, set: text))
+        arHeaderText?.append(HeaderText(set: header, set: text, setId: generate()))
     }
     
     func pushData(push header: String, push img: UIImage) {
-        arImageHeader?.append(ImageHeader(set: header, set: img))
+        arImageHeader?.append(ImageHeader(set: header, set: img, setId: generate()))
     }
     
     func pushData(push date: String) {
-        arDate?.append(Date(set: date))
+        arDate?.append(Date(set: date, setId: generate()))
+    }
+    
+    //Update
+    
+    func updateData(setData data: Any) {
+        if let ht = data as? HeaderText,
+            let index = arHeaderText?.index(of: ht) {
+            arHeaderText?[index] = ht
+        } else if let ih = data as? ImageHeader,
+            let index = arImageHeader?.index(of: ih) {
+            arImageHeader?[index] = ih
+        } else if let d = data as? Date,
+            let index = arDate?.index(of: d) {
+            arDate?[index] = d
+        }
     }
     
     //Save
@@ -156,16 +115,29 @@ class DataSource {
     
     //Delete
     
-    func delete(ar name: String, at element: Int) {
-        switch name {
-        case "ArHeaderText":
-            arHeaderText?.remove(at: element)
-        case "ArImageHeader":
-            arImageHeader?.remove(at: element)
-        case "ArDate":
-            arDate?.remove(at: element)
-        default:
-            return
+//    func delete(ar name: String, at element: Int) {
+//        switch name {
+//        case "ArHeaderText":
+//            arHeaderText?.remove(at: element)
+//        case "ArImageHeader":
+//            arImageHeader?.remove(at: element)
+//        case "ArDate":
+//            arDate?.remove(at: element)
+//        default:
+//            return
+//        }
+//    }
+    
+    func delete(setOb obForDel: Any) {
+        if let ht = obForDel as? HeaderText,
+            let index = arHeaderText?.index(of: ht) {
+            arHeaderText?.remove(at: index)
+        } else if let ih = obForDel as? ImageHeader,
+            let index = arImageHeader?.index(of: ih) {
+            arImageHeader?.remove(at: index)
+        } else if let d = obForDel as? Date,
+            let index = arDate?.index(of: d) {
+            arDate?.remove(at: index)
         }
     }
     
