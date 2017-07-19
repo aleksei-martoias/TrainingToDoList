@@ -10,7 +10,23 @@ import Foundation
 import Realm
 import RealmSwift
 
-class RepositoryService {
+protocol RepositoryService {
+    func save<T: Object>(object: T)
+    
+    func save<T: Object>(object: [T])
+    
+    func get<T: Object>(type: T.Type) -> [T]?
+    
+    func get<T: Object>(type: T.Type, predicate: NSPredicate) -> T?
+    
+    func remove<T: Object>(object: T)
+    
+    func remove<T: Object>(object: [T])
+    
+    func clean()
+}
+
+class RepositoryServiceImplementation: RepositoryService {
     func save<T: Object>(object: T) {
         do {
             let realm = try Realm()

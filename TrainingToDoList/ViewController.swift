@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Dip
+import Dip_UI
 
 class ViewController: UIViewController {
 
@@ -16,8 +18,7 @@ class ViewController: UIViewController {
         }
     }
     let refreshControl = UIRefreshControl()
-    let dataSource = DataSource()
-    
+    var dataSource: DataSource?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,11 +101,11 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return dataSource.arHeaderText!.count
+            return dataSource?.arHeaderText?.count ?? 0
         case 1:
-            return dataSource.arImageHeader!.count
+            return dataSource?.arImageHeader?.count ?? 0
         case 2:
-            return dataSource.arDate!.count
+            return dataSource?.arDate?.count ?? 0
         default:
             return 0
         }
@@ -116,18 +117,21 @@ extension ViewController: UITableViewDataSource {
         switch indexPath.section {
         case 0:
             cell = tableView.dequeueReusableCell(withIdentifier: "TextViewCell", for: indexPath)
-            if let cell = cell as? TextViewCell {
+            if let cell = cell as? TextViewCell,
+                let dataSource = dataSource {
                 cell.setTask(set: indexPath.row, setDataSource: dataSource)
             }
         case 1:
             cell = tableView.dequeueReusableCell(withIdentifier: "PhotoViewCell", for: indexPath)
-            if let cell = cell as? PhotoViewCell {
+            if let cell = cell as? PhotoViewCell ,
+                let dataSource = dataSource {
                 cell.setTask(set: indexPath.row, setDataSource: dataSource)
             }
             break
         case 2:
             cell = tableView.dequeueReusableCell(withIdentifier: "DateViewCell", for: indexPath)
-            if let cell = cell as? DateViewCell {
+            if let cell = cell as? DateViewCell ,
+                let dataSource = dataSource {
                 cell.setTask(set: indexPath.row, setDataSource: dataSource)
             }
         default:
@@ -145,11 +149,11 @@ extension ViewController: UITableViewDataSource {
         let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (IndexPath) -> Void in
             switch indexPath.section {
             case 0:
-                self.performSegue(withIdentifier: "HeaderTextShow", sender: self.dataSource.arHeaderText?[indexPath.row])
+                self.performSegue(withIdentifier: "HeaderTextShow", sender: self.dataSource?.arHeaderText?[indexPath.row])
             case 1:
-                self.performSegue(withIdentifier: "ImageHeaderShow", sender: self.dataSource.arImageHeader?[indexPath.row])
+                self.performSegue(withIdentifier: "ImageHeaderShow", sender: self.dataSource?.arImageHeader?[indexPath.row])
             case 2:
-                self.performSegue(withIdentifier: "DateSegue", sender: self.dataSource.arDate?[indexPath.row])
+                self.performSegue(withIdentifier: "DateSegue", sender: self.dataSource?.arDate?[indexPath.row])
             default:
                 break
             }
@@ -158,16 +162,16 @@ extension ViewController: UITableViewDataSource {
         let deleteAction = UITableViewRowAction(style: .default, title: "delete") { (IndexPath) -> Void in
             switch indexPath.section {
             case 0:
-                if let ht = self.dataSource.arHeaderText?[indexPath.row] {
-                    self.dataSource.delete(setOb: ht)
+                if let ht = self.dataSource?.arHeaderText?[indexPath.row] {
+                    self.dataSource?.delete(setOb: ht)
                 }
             case 1:
-                if let ih = self.dataSource.arImageHeader?[indexPath.row] {
-                    self.dataSource.delete(setOb: ih)
+                if let ih = self.dataSource?.arImageHeader?[indexPath.row] {
+                    self.dataSource?.delete(setOb: ih)
                 }
             case 2:
-                if let d = self.dataSource.arDate?[indexPath.row] {
-                    self.dataSource.delete(setOb: d)
+                if let d = self.dataSource?.arDate?[indexPath.row] {
+                    self.dataSource?.delete(setOb: d)
                 }
             default:
                 return
@@ -204,21 +208,23 @@ extension ViewController: CreatorDelegete{
     }
 
     func addHeaderText(setHeader header: String, setText text: String) {
-        dataSource.pushData(push: header, push: text)
+        dataSource?.pushData(push: header, push: text)
         tableView.reloadData()
     }
     
     func addImageHeader(setHeader header: String, setImage img: UIImage) {
-        dataSource.pushData(push: header, push: img)
+        dataSource?.pushData(push: header, push: img)
         tableView.reloadData()
     }
     
     func addDate(setDate date: String) {
-        dataSource.pushData(push: date)
+        dataSource?.pushData(push: date)
         tableView.reloadData()
     }
 }
 
-struct TransferDate {
-    
+extension ViewController: StoryboardInstantiatable {
+    func didInstantiateFromStoryboard(container: DependencyContainer, tag: DependencyContainer.Tag?) throws {
+        try container.resolveDependencies(of: self, tag: tag)
+    }
 }

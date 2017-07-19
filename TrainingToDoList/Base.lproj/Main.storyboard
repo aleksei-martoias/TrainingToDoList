@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--TrainingToDoList-->
+        <!--Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TrainingToDoList" customModuleProvider="target" sceneMemberID="viewController">
@@ -159,6 +159,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="nil" keyPath="dipTag"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="tableView" destination="7yr-aD-EhJ" id="zht-TV-gtA"/>
                         <segue destination="qKq-UF-xJS" kind="show" identifier="HeaderTextShow" id="CWo-UB-OHj"/>
@@ -167,6 +170,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="RTe-Ts-i0L" customClass="Configurator" customModule="TrainingToDoList" customModuleProvider="target">
+                    <connections>
+                        <outlet property="controller" destination="BYZ-38-t0r" id="Nhs-Vp-RYa"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="666.39999999999998" y="135.38230884557723"/>
         </scene>

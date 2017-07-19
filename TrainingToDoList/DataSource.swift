@@ -9,38 +9,62 @@
 import Foundation
 import UIKit
 
-class DataSource {
-    let repositorySerivice = RepositoryService()
+protocol DataSource {
+    var arHeaderText: [HeaderText]? {get set}
+    
+    var arImageHeader: [ImageHeader]? {get set}
+    
+    var arDate: [Date]? {get set}
+    
+    func clean()
+    
+    func pushData(push header: String, push text: String)
+    
+    func pushData(push header: String, push img: UIImage)
+    
+    func pushData(push date: String)
+    
+    func updateData(setData data: Any)
+    
+    func delete(setOb obForDel: Any)
+}
+
+class DataSourceImplementation: DataSource {
+
+    init(repositoryService: RepositoryService) {
+        self.repositoryService = repositoryService
+    }
+    let repositoryService: RepositoryService!
     var arHeaderText: [HeaderText]? {
         get {
-            guard let inputData = repositorySerivice.get(type: HeaderText.self) else { return nil }
+            guard let inputData = repositoryService.get(type: HeaderText.self) else { return nil }
             return inputData
         }
         set(newElem) {
-            repositorySerivice.save(object: newElem!)
+            repositoryService.save(object: newElem!)
         }
     }
     var arImageHeader: [ImageHeader]? {
         get {
-            guard let inputData = repositorySerivice.get(type: ImageHeader.self) else { return nil }
+            guard let inputData = repositoryService.get(type: ImageHeader.self) else { return nil }
             return inputData
         }
         set(newElem) {
-            repositorySerivice.save(object: newElem!)
+            repositoryService.save(object: newElem!)
         }
     }
     var arDate: [Date]? {
         get {
-            guard let inputData = repositorySerivice.get(type: Date.self) else { return nil }
+            guard let inputData = repositoryService.get(type: Date.self) else { return nil }
             return inputData
         }
         set(newElem) {
-            repositorySerivice.save(object: newElem!)
+            repositoryService.save(object: newElem!)
         }
     }
     
     func clean() {
-        repositorySerivice.clean()
+        repositoryService.clean()
     }
     
     func generate() -> String {
@@ -82,22 +106,22 @@ class DataSource {
     //Update
     func updateData(setData data: Any) {
         if let headerText = data as? HeaderText {
-            repositorySerivice.save(object: headerText)
+            repositoryService.save(object: headerText)
         } else if let imageHeader = data as? ImageHeader {
-            repositorySerivice.save(object: imageHeader)
+            repositoryService.save(object: imageHeader)
         } else if let date = data as? Date {
-            repositorySerivice.save(object: date)
+            repositoryService.save(object: date)
         }
     }
     
     //Delete
     func delete(setOb obForDel: Any) {
         if let headerText = obForDel as? HeaderText {
-            repositorySerivice.remove(object: headerText)
+            repositoryService.remove(object: headerText)
         } else if let imageHeader = obForDel as? ImageHeader {
-            repositorySerivice.remove(object: imageHeader)
+            repositoryService.remove(object: imageHeader)
         } else if let date = obForDel as? Date {
-            repositorySerivice.remove(object: date)
+            repositoryService.remove(object: date)
         }
     }
 }

@@ -13,6 +13,8 @@
 		572DD0AF1F17AF8F00C7A62F /* HeaderTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572DD0AE1F17AF8F00C7A62F /* HeaderTextViewController.swift */; };
 		572DD0B21F17B60C00C7A62F /* HeaderImageViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572DD0B11F17B60C00C7A62F /* HeaderImageViewcontroller.swift */; };
 		572DD0B41F17B64800C7A62F /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572DD0B31F17B64800C7A62F /* DateViewController.swift */; };
+		572DE03B1F1F49740064C70D /* CoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572DE03A1F1F49740064C70D /* CoreAssembly.swift */; };
+		572DE03D1F1F69460064C70D /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572DE03C1F1F69460064C70D /* Configurator.swift */; };
 		573CAB0C1F18BA33000615F1 /* BottomScrollConstrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573CAB0B1F18BA33000615F1 /* BottomScrollConstrait.swift */; };
 		5748F6F91F1DFC4200D2B7FE /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748F6F81F1DFC4200D2B7FE /* RepositoryService.swift */; };
 		5748F6FB1F1E16A500D2B7FE /* TypesForRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748F6FA1F1E16A500D2B7FE /* TypesForRealm.swift */; };
@@ -34,6 +36,8 @@
 		572DD0AE1F17AF8F00C7A62F /* HeaderTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTextViewController.swift; sourceTree = "<group>"; };
 		572DD0B11F17B60C00C7A62F /* HeaderImageViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderImageViewcontroller.swift; sourceTree = "<group>"; };
 		572DD0B31F17B64800C7A62F /* DateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
+		572DE03A1F1F49740064C70D /* CoreAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreAssembly.swift; sourceTree = "<group>"; };
+		572DE03C1F1F69460064C70D /* Configurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 		573CAB0B1F18BA33000615F1 /* BottomScrollConstrait.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomScrollConstrait.swift; sourceTree = "<group>"; };
 		5748F6F81F1DFC4200D2B7FE /* RepositoryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
 		5748F6FA1F1E16A500D2B7FE /* TypesForRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypesForRealm.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 				573CAB0B1F18BA33000615F1 /* BottomScrollConstrait.swift */,
 				5752AA3A1F1618EC005D4F62 /* SupportingFiles */,
 				5752AA291F161862005D4F62 /* ViewController.swift */,
+				572DE03C1F1F69460064C70D /* Configurator.swift */,
 				572DD0AE1F17AF8F00C7A62F /* HeaderTextViewController.swift */,
 				572DD0B11F17B60C00C7A62F /* HeaderImageViewcontroller.swift */,
 				572DD0B31F17B64800C7A62F /* DateViewController.swift */,
@@ -134,6 +139,7 @@
 				5752AA2E1F161862005D4F62 /* Assets.xcassets */,
 				5752AA301F161862005D4F62 /* LaunchScreen.storyboard */,
 				5752AA331F161862005D4F62 /* Info.plist */,
+				572DE03A1F1F49740064C70D /* CoreAssembly.swift */,
 			);
 			name = SupportingFiles;
 			sourceTree = "<group>";
@@ -287,9 +293,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				572DE03D1F1F69460064C70D /* Configurator.swift in Sources */,
 				572DD0B41F17B64800C7A62F /* DateViewController.swift in Sources */,
 				572DD0AB1F1753EB00C7A62F /* DataSourceOld.swift in Sources */,
 				573CAB0C1F18BA33000615F1 /* BottomScrollConstrait.swift in Sources */,
+				572DE03B1F1F49740064C70D /* CoreAssembly.swift in Sources */,
 				5748F6F91F1DFC4200D2B7FE /* RepositoryService.swift in Sources */,
 				5752AA3C1F162259005D4F62 /* TextViewCell.swift in Sources */,
 				5752AA2A1F161862005D4F62 /* ViewController.swift in Sources */,
