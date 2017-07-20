@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		024FCEB614C17A6FCEF861AA /* MainScreenViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CC5F3EE6754FEAD668EC58 /* MainScreenViewInput.swift */; };
+		14AD6574822706E73128760B /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E86DC8EEDCFFB0C24DDB721 /* MainScreenPresenter.swift */; };
+		1A7115B461FE2EE072D728A1 /* MainScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C9AC08227A8D2F80497467 /* MainScreenInteractorInput.swift */; };
 		3A722F05F36C83747D9FF514 /* Pods_TrainingToDoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C4BA6E6EC2693BB78818F9E /* Pods_TrainingToDoList.framework */; };
+		41115415F847DBDDAAF0AF2F /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFCB9DB08B27EEE20F117D /* MainScreenViewController.swift */; };
+		4A2C167904F1321BE6849C37 /* MainScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C7608479F8499F951494A /* MainScreenConfigurator.swift */; };
 		572DD0AB1F1753EB00C7A62F /* DataSourceOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572DD0AA1F1753EB00C7A62F /* DataSourceOld.swift */; };
 		572DD0AD1F176CB800C7A62F /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572DD0AC1F176CB800C7A62F /* Types.swift */; };
 		572DD0AF1F17AF8F00C7A62F /* HeaderTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572DD0AE1F17AF8F00C7A62F /* HeaderTextViewController.swift */; };
@@ -27,10 +32,20 @@
 		5752AA3C1F162259005D4F62 /* TextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752AA3B1F162259005D4F62 /* TextViewCell.swift */; };
 		5752AA3E1F16228C005D4F62 /* PhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752AA3D1F16228C005D4F62 /* PhotoViewCell.swift */; };
 		5752AA421F1622FB005D4F62 /* DateViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752AA411F1622FB005D4F62 /* DateViewCell.swift */; };
+		7C511E3426AE2B0B46CA30FF /* MainScreenInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9DB982DBB2D5804012FAE4 /* MainScreenInteractorOutput.swift */; };
+		880C4C62A2D754AA49AC31BF /* MainScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088316D8B6E1AAB337F83C47 /* MainScreenViewOutput.swift */; };
+		B8241DBDA575E2CBBEA03752 /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56E74989F57417424AA6863 /* MainScreenRouter.swift */; };
+		DA1B65D8DF7C7152BC22FC6F /* MainScreenRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491A933F5660942B980D846 /* MainScreenRouterInput.swift */; };
+		E597E93BA1AF0CFC68D52038 /* MainScreenInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F768F10C32BCE64A4FD7621A /* MainScreenInitializer.swift */; };
+		F0B9CBC6B050C005F126A702 /* MainScreenModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66D0C43A9CA8E59B7BE6C13 /* MainScreenModuleInput.swift */; };
+		FBF8F041BA92B02B22DAF4A7 /* MainScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C21A440FC16B357DB5EFFA1 /* MainScreenInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		088316D8B6E1AAB337F83C47 /* MainScreenViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainScreenViewOutput.swift; sourceTree = "<group>"; };
+		21C9AC08227A8D2F80497467 /* MainScreenInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainScreenInteractorInput.swift; sourceTree = "<group>"; };
 		3C4BA6E6EC2693BB78818F9E /* Pods_TrainingToDoList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrainingToDoList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51CC5F3EE6754FEAD668EC58 /* MainScreenViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainScreenViewInput.swift; sourceTree = "<group>"; };
 		572DD0AA1F1753EB00C7A62F /* DataSourceOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceOld.swift; sourceTree = "<group>"; };
 		572DD0AC1F176CB800C7A62F /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		572DD0AE1F17AF8F00C7A62F /* HeaderTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTextViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +67,16 @@
 		5752AA3B1F162259005D4F62 /* TextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewCell.swift; sourceTree = "<group>"; };
 		5752AA3D1F16228C005D4F62 /* PhotoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewCell.swift; sourceTree = "<group>"; };
 		5752AA411F1622FB005D4F62 /* DateViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewCell.swift; sourceTree = "<group>"; };
+		6E86DC8EEDCFFB0C24DDB721 /* MainScreenPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
+		7C21A440FC16B357DB5EFFA1 /* MainScreenInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainScreenInteractor.swift; sourceTree = "<group>"; };
+		8D9DB982DBB2D5804012FAE4 /* MainScreenInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainScreenInteractorOutput.swift; sourceTree = "<group>"; };
+		9FCFCB9DB08B27EEE20F117D /* MainScreenViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		BFD3705F2BEFD318968D8794 /* Pods-TrainingToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainingToDoList.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrainingToDoList/Pods-TrainingToDoList.release.xcconfig"; sourceTree = "<group>"; };
+		D66D0C43A9CA8E59B7BE6C13 /* MainScreenModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainScreenModuleInput.swift; sourceTree = "<group>"; };
+		ED2C7608479F8499F951494A /* MainScreenConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainScreenConfigurator.swift; sourceTree = "<group>"; };
+		F491A933F5660942B980D846 /* MainScreenRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainScreenRouterInput.swift; sourceTree = "<group>"; };
+		F56E74989F57417424AA6863 /* MainScreenRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainScreenRouter.swift; sourceTree = "<group>"; };
+		F768F10C32BCE64A4FD7621A /* MainScreenInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainScreenInitializer.swift; sourceTree = "<group>"; };
 		F7FE658F77ED74E1852A1CE8 /* Pods-TrainingToDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainingToDoList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrainingToDoList/Pods-TrainingToDoList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +92,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F3C2163BF4F6C3C36DE4EFA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				51CC5F3EE6754FEAD668EC58 /* MainScreenViewInput.swift */,
+				088316D8B6E1AAB337F83C47 /* MainScreenViewOutput.swift */,
+				9FCFCB9DB08B27EEE20F117D /* MainScreenViewController.swift */,
+			);
+			name = View;
+			path = View;
+			sourceTree = "<group>";
+		};
 		572DD0A91F17539700C7A62F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +163,7 @@
 				572DD0B01F17AFA000C7A62F /* Core */,
 				572DD0A91F17539700C7A62F /* Cells */,
 				5752AA2B1F161862005D4F62 /* Main.storyboard */,
+				BE9455162F7BAC91CCD35DE5 /* MainScreen */,
 			);
 			path = TrainingToDoList;
 			sourceTree = "<group>";
@@ -153,6 +189,16 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		5EE57EF509EA5ADF9F52A15B /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				ED2C7608479F8499F951494A /* MainScreenConfigurator.swift */,
+				F768F10C32BCE64A4FD7621A /* MainScreenInitializer.swift */,
+			);
+			name = Configurator;
+			path = Configurator;
+			sourceTree = "<group>";
+		};
 		6E7BBEF26F2082D39C134785 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +214,50 @@
 				BFD3705F2BEFD318968D8794 /* Pods-TrainingToDoList.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B566F109355009D90D30DC22 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F491A933F5660942B980D846 /* MainScreenRouterInput.swift */,
+				F56E74989F57417424AA6863 /* MainScreenRouter.swift */,
+			);
+			name = Router;
+			path = Router;
+			sourceTree = "<group>";
+		};
+		BE9455162F7BAC91CCD35DE5 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3F3C2163BF4F6C3C36DE4EFA /* View */,
+				C24AA79EEA7F11F0B4D72EF2 /* Presenter */,
+				DAEF4FB57B29884498C5B624 /* Interactor */,
+				B566F109355009D90D30DC22 /* Router */,
+				5EE57EF509EA5ADF9F52A15B /* Configurator */,
+			);
+			name = MainScreen;
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		C24AA79EEA7F11F0B4D72EF2 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D66D0C43A9CA8E59B7BE6C13 /* MainScreenModuleInput.swift */,
+				6E86DC8EEDCFFB0C24DDB721 /* MainScreenPresenter.swift */,
+			);
+			name = Presenter;
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		DAEF4FB57B29884498C5B624 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				21C9AC08227A8D2F80497467 /* MainScreenInteractorInput.swift */,
+				8D9DB982DBB2D5804012FAE4 /* MainScreenInteractorOutput.swift */,
+				7C21A440FC16B357DB5EFFA1 /* MainScreenInteractor.swift */,
+			);
+			name = Interactor;
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +399,18 @@
 				5748F6FB1F1E16A500D2B7FE /* TypesForRealm.swift in Sources */,
 				5752AA3E1F16228C005D4F62 /* PhotoViewCell.swift in Sources */,
 				5748F6FD1F1E1B4700D2B7FE /* DataSource.swift in Sources */,
+				024FCEB614C17A6FCEF861AA /* MainScreenViewInput.swift in Sources */,
+				880C4C62A2D754AA49AC31BF /* MainScreenViewOutput.swift in Sources */,
+				41115415F847DBDDAAF0AF2F /* MainScreenViewController.swift in Sources */,
+				F0B9CBC6B050C005F126A702 /* MainScreenModuleInput.swift in Sources */,
+				14AD6574822706E73128760B /* MainScreenPresenter.swift in Sources */,
+				1A7115B461FE2EE072D728A1 /* MainScreenInteractorInput.swift in Sources */,
+				7C511E3426AE2B0B46CA30FF /* MainScreenInteractorOutput.swift in Sources */,
+				FBF8F041BA92B02B22DAF4A7 /* MainScreenInteractor.swift in Sources */,
+				DA1B65D8DF7C7152BC22FC6F /* MainScreenRouterInput.swift in Sources */,
+				B8241DBDA575E2CBBEA03752 /* MainScreenRouter.swift in Sources */,
+				4A2C167904F1321BE6849C37 /* MainScreenConfigurator.swift in Sources */,
+				E597E93BA1AF0CFC68D52038 /* MainScreenInitializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
