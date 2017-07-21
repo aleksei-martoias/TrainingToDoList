@@ -27,9 +27,13 @@ class DateViewCell: UITableViewCell {
         date.text = dateF
     }*/
     
-    func setTask(set element: Int, setDataSource dataSource: DataSource) {
-        if dataSource.arDate != nil && (dataSource.arDate?.count)! > element {
-            date.text = dataSource.arDate?[element].dateLabel
-        }
+//    func setTask(set element: Int, setDataSource dataSource: DataSource) {
+//        if dataSource.arDate != nil && (dataSource.arDate?.count)! > element {
+//            date.text = dataSource.arDate?[element].dateLabel
+//        }
+//    }
+    
+    func setTask(dateText: String) {
+        date.text = dateText
     }
 }

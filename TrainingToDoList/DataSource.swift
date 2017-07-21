@@ -9,6 +9,14 @@
 import Foundation
 import UIKit
 
+enum RecordTypes {
+    case textType
+    case imageType
+    case dateType
+    
+    static let allValues = [textType, imageType, dateType]
+}
+
 protocol DataSource {
     var arHeaderText: [HeaderText]? {get set}
     
@@ -20,7 +28,7 @@ protocol DataSource {
     
     func pushData(push header: String, push text: String)
     
-    func pushData(push header: String, push img: UIImage)
+    func pushData(push header: String, push img: Data)
     
     func pushData(push date: String)
     
@@ -88,10 +96,11 @@ class DataSourceImplementation: DataSource {
         arHeaderText = [pushingHT]
     }
 
-    func pushData(push header: String, push img: UIImage) {
+    func pushData(push header: String, push img: Data) {
         let pushingIH = ImageHeader()
         pushingIH.headerLabel = header
-        pushingIH.image = convertImageToData(convert: img)
+        //pushingIH.image = convertImageToData(convert: img)
+        pushingIH.image = img
         pushingIH.id = generate()
         arImageHeader = [pushingIH]
     }

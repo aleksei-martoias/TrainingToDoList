@@ -25,10 +25,15 @@ class TextViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func setTask(set element: Int, setDataSource dataSource: DataSource) {
-        if dataSource.arHeaderText != nil && (dataSource.arHeaderText?.count)! > element {
-            headerOfTask.text = dataSource.arHeaderText?[element].headerLabel
-            textOfTask.text = dataSource.arHeaderText?[element].textLabel
-        }
+//    func setTask(set element: Int, setDataSource dataSource: DataSource) {
+//        if dataSource.arHeaderText != nil && (dataSource.arHeaderText?.count)! > element {
+//            headerOfTask.text = dataSource.arHeaderText?[element].headerLabel
+//            textOfTask.text = dataSource.arHeaderText?[element].textLabel
+//        }
+//    }
+    
+    func setTask(headerText: String, discription: String) {
+        headerOfTask.text = headerText
+        textOfTask.text = discription
     }
 }

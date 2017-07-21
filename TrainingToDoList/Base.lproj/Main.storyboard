@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Controller-->
+        <!--Mainscreen View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TrainingToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainScreenViewController" customModule="TrainingToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -129,10 +129,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Zt9-qw-urh"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="1tV-RF-axO"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -164,24 +160,24 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="tableView" destination="7yr-aD-EhJ" id="zht-TV-gtA"/>
-                        <segue destination="qKq-UF-xJS" kind="show" identifier="HeaderTextShow" id="CWo-UB-OHj"/>
                         <segue destination="vr0-gl-0VC" kind="show" identifier="ImageHeaderShow" id="hla-F1-eyR"/>
                         <segue destination="Gfv-kc-eK1" kind="show" identifier="DateSegue" id="NpN-mS-MR1"/>
+                        <segue destination="qKq-UF-xJS" kind="show" identifier="HeaderTextShow" id="ldl-mr-FqV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <customObject id="RTe-Ts-i0L" customClass="Configurator" customModule="TrainingToDoList" customModuleProvider="target">
+                <customObject id="RTe-Ts-i0L" customClass="MainScreenModuleInitializer" customModule="TrainingToDoList" customModuleProvider="target">
                     <connections>
-                        <outlet property="controller" destination="BYZ-38-t0r" id="Nhs-Vp-RYa"/>
+                        <outlet property="mainscreenViewController" destination="BYZ-38-t0r" id="5sD-KE-cTJ"/>
                     </connections>
                 </customObject>
             </objects>
             <point key="canvasLocation" x="666.39999999999998" y="135.38230884557723"/>
         </scene>
-        <!--Header Text View Controller-->
+        <!--Texttaskcreationscreen View Controller-->
         <scene sceneID="9mN-Mn-w6x">
             <objects>
-                <viewController id="qKq-UF-xJS" customClass="HeaderTextViewController" customModule="TrainingToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qKq-UF-xJS" customClass="TextTaskCreationScreenViewController" customModule="TrainingToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8HB-8m-p5l"/>
                         <viewControllerLayoutGuide type="bottom" id="hya-jW-kbS"/>
@@ -234,30 +230,35 @@
                     <navigationItem key="navigationItem" id="sNw-mk-8Vp">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="xGv-yh-Amm">
                             <connections>
-                                <action selector="done:" destination="qKq-UF-xJS" id="yKQ-bE-yQr"/>
+                                <action selector="done:" destination="qKq-UF-xJS" id="o5Y-nN-Ohf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="gesture" destination="iHu-08-Ifu" id="VDf-5U-aRn"/>
-                        <outlet property="headerTitle" destination="Pjj-50-0Jp" id="I0E-xe-hi7"/>
-                        <outlet property="scrollView" destination="qfd-NQ-6H2" id="GgA-lO-fyV"/>
-                        <outlet property="textUI" destination="yRp-t2-00U" id="Jzp-fb-C2n"/>
+                        <outlet property="gesture" destination="iHu-08-Ifu" id="y2f-36-RVp"/>
+                        <outlet property="headerTitle" destination="Pjj-50-0Jp" id="V2B-er-MWK"/>
+                        <outlet property="scrollView" destination="qfd-NQ-6H2" id="Ab8-kZ-RL8"/>
+                        <outlet property="textUI" destination="yRp-t2-00U" id="UlP-2r-zf6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftz-Rw-0K4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="x6w-rB-49V" customClass="TextTaskCreationScreenModuleInitializer" customModule="TrainingToDoList" customModuleProvider="target">
+                    <connections>
+                        <outlet property="texttaskcreationscreenViewController" destination="qKq-UF-xJS" id="vcR-za-geN"/>
+                    </connections>
+                </customObject>
                 <tapGestureRecognizer id="iHu-08-Ifu">
                     <connections>
-                        <action selector="tapAction:" destination="qKq-UF-xJS" id="Wuz-3l-fan"/>
+                        <action selector="tapAction:" destination="qKq-UF-xJS" id="HWb-gG-HbH"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1480.8" y="-545.57721139430294"/>
         </scene>
-        <!--Header Image Viewcontroller-->
+        <!--Imagetaskcreationscreen View Controller-->
         <scene sceneID="0rV-Xg-bIa">
             <objects>
-                <viewController id="vr0-gl-0VC" customClass="HeaderImageViewcontroller" customModule="TrainingToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vr0-gl-0VC" customClass="ImageTaskCreationScreenViewController" customModule="TrainingToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Wy-on-jXT"/>
                         <viewControllerLayoutGuide type="bottom" id="trH-f4-RLR"/>
@@ -282,7 +283,7 @@
                                 <rect key="frame" x="144" y="475" width="87" height="30"/>
                                 <state key="normal" title="Select photo"/>
                                 <connections>
-                                    <action selector="selectPhotoAction:" destination="vr0-gl-0VC" eventType="touchUpInside" id="PYB-jw-aUS"/>
+                                    <action selector="selectPhotoAction:" destination="vr0-gl-0VC" eventType="touchUpInside" id="5rh-RO-pIJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -301,23 +302,28 @@
                     <navigationItem key="navigationItem" id="VTY-yK-6E8">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="UJQ-wB-qa5">
                             <connections>
-                                <action selector="doneButton:" destination="vr0-gl-0VC" id="jEe-cf-z2X"/>
+                                <action selector="doneButton:" destination="vr0-gl-0VC" id="FDi-BH-Nn9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageView" destination="Exd-j8-mWe" id="V36-7J-7q3"/>
-                        <outlet property="titleField" destination="Qxn-xP-8GY" id="bdB-zm-G9K"/>
+                        <outlet property="imageView" destination="Exd-j8-mWe" id="uZ7-bg-17F"/>
+                        <outlet property="titleField" destination="Qxn-xP-8GY" id="kMw-ef-I6F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ycz-Pa-dao" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="cib-ar-d0d" customClass="ImageTaskCreationScreenModuleInitializer" customModule="TrainingToDoList" customModuleProvider="target">
+                    <connections>
+                        <outlet property="imagetaskcreationscreenViewController" destination="vr0-gl-0VC" id="YyG-5M-fyC"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1480.8" y="136.28185907046478"/>
         </scene>
-        <!--Date View Controller-->
+        <!--Datetaskcreationscreen View Controller-->
         <scene sceneID="RY7-bq-wzN">
             <objects>
-                <viewController id="Gfv-kc-eK1" customClass="DateViewController" customModule="TrainingToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Gfv-kc-eK1" customClass="DateTaskCreationScreenViewController" customModule="TrainingToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="091-Wk-5qj"/>
                         <viewControllerLayoutGuide type="bottom" id="p0w-Qj-wXH"/>
@@ -343,17 +349,22 @@
                     <navigationItem key="navigationItem" id="8hJ-Yk-f4y">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="y2Q-We-bip">
                             <connections>
-                                <action selector="doneButton:" destination="Gfv-kc-eK1" id="AdV-az-5fQ"/>
+                                <action selector="doneButton:" destination="Gfv-kc-eK1" id="rg4-tV-1jE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="datePickerUI" destination="GPg-2a-lP0" id="Lul-GW-J3h"/>
+                        <outlet property="datePicker" destination="GPg-2a-lP0" id="fMa-P6-6jn"/>
                         <outlet property="titleField" destination="dvC-Wa-qrB" id="gHC-nn-L4H"/>
-                        <outlet property="toolBarUI" destination="ZIb-FY-ntn" id="s3X-yQ-vE1"/>
+                        <outlet property="toolBar" destination="ZIb-FY-ntn" id="zeI-U0-nrK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4s5-G2-5EI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="lZV-jR-7ct" customClass="DateTaskCreationScreenModuleInitializer" customModule="TrainingToDoList" customModuleProvider="target">
+                    <connections>
+                        <outlet property="datetaskcreationscreenViewController" destination="Gfv-kc-eK1" id="wDU-4D-f6Y"/>
+                    </connections>
+                </customObject>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ZIb-FY-ntn">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -361,7 +372,7 @@
                         <barButtonItem systemItem="flexibleSpace" id="rZ7-Rz-qpb"/>
                         <barButtonItem systemItem="done" id="rSa-vg-DaQ">
                             <connections>
-                                <action selector="doneButtonTB:" destination="Gfv-kc-eK1" id="mVb-Ns-gNn"/>
+                                <action selector="doneButtonToolBar:" destination="Gfv-kc-eK1" id="z3L-NE-VRS"/>
                             </connections>
                         </barButtonItem>
                     </items>

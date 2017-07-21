@@ -20,6 +20,9 @@ class CoreAssembly {
         container.register(.singleton) { DataSourceImplementation(repositoryService: $0) }
         .implements(DataSource.self)
         
+        container.register(.singleton) { Picker() }
+        .implements(PickerInput.self)
+        
         return container
     }
 }

@@ -30,10 +30,15 @@ class PhotoViewCell: UITableViewCell {
         img.image = image
     }*/
 
-    func setTask(set element: Int, setDataSource dataSource: DataSource) {
-        if dataSource.arImageHeader != nil && (dataSource.arImageHeader?.count)! > element {
-            headerOfTask.text = dataSource.arImageHeader?[element].headerLabel
-            img.image = UIImage(data: (dataSource.arImageHeader?[element].image)!, scale:1.0)!
-        }
+//    func setTask(set element: Int, setDataSource dataSource: DataSource) {
+//        if dataSource.arImageHeader != nil && (dataSource.arImageHeader?.count)! > element {
+//            headerOfTask.text = dataSource.arImageHeader?[element].headerLabel
+//            img.image = UIImage(data: (dataSource.arImageHeader?[element].image)!, scale:1.0)!
+//        }
+//    }
+    
+    func setTask(headerText: String, image: Data) {
+        headerOfTask.text = headerText
+        img.image = UIImage(data: (image), scale:1.0)!
     }
 }

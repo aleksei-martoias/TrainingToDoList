@@ -11,13 +11,13 @@ import UIKit
 import Dip_UI
 import Dip
 
-class Configurator: NSObject {
-    @IBOutlet weak var controller: UIViewController! {
-        didSet {
-            if let controller = controller as? ViewController,
-                let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-                controller.dataSource = try? appDelegate.container.resolve() as DataSource
-            }
-        }
-    }
-}
+//class Configurator: NSObject {
+//    @IBOutlet weak var controller: UIViewController! {
+//        didSet {
+//            if let controller = controller as? ViewController,
+//                let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+//                controller.dataSource = try? appDelegate.container.resolve() as DataSource
+//            }
+//        }
+//    }
+//}
