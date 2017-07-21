@@ -1,0 +1,6 @@
+framework module DiKit {
+  umbrella header "DiKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

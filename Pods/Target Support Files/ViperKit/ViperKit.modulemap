@@ -1,0 +1,6 @@
+framework module ViperKit {
+  umbrella header "ViperKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
