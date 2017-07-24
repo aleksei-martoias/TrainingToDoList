@@ -7,6 +7,7 @@
 //
 
 protocol DateTaskCreationScreenViewInput: class {
-
+    func popController()
+    
     func setupInitialState()
 }

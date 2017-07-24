@@ -8,18 +8,18 @@
 
 import UIKit
 import ViperKit
+import Alamofire
 
-class DateTaskCreationScreenViewController: BaseViewController, DateTaskCreationScreenViewInput, ModuleInputProvider {
+class DateTaskCreationScreenViewController: BaseViewController, ModuleInputProvider {
     
     var moduleInput: ModuleInput!
     var output: DateTaskCreationScreenViewOutput!
-
+    
+    @IBOutlet weak var activityIndicate: UIActivityIndicatorView!
     @IBOutlet weak var toolBar: UIToolbar!
-    
     @IBOutlet weak var titleField: UITextField!
-    
     @IBOutlet weak var datePicker: UIDatePicker!
-    
+
     @IBAction func datePickChange(_ sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMM yyyy | HH:mm"
@@ -35,8 +35,8 @@ class DateTaskCreationScreenViewController: BaseViewController, DateTaskCreation
     
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
         if let data = titleField.text {
+            activityIndicate.startAnimating()
             output.createEntityAndPush(data)
-            navigationController?.popViewController(animated: true)
         }
     }
 
@@ -61,5 +61,12 @@ class DateTaskCreationScreenViewController: BaseViewController, DateTaskCreation
 
     // MARK: DateTaskCreationScreenViewInput
     func setupInitialState() {
+    }
+}
+
+extension DateTaskCreationScreenViewController :DateTaskCreationScreenViewInput {
+    func popController() {
+        activityIndicate.stopAnimating()
+        navigationController?.popViewController(animated: true)
     }
 }

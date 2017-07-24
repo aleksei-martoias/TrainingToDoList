@@ -8,6 +8,7 @@
 
 import UIKit
 import ViperKit
+import Alamofire
 
 class MainScreenViewController: BaseViewController, ModuleInputProvider {
     var moduleInput: ModuleInput!
@@ -31,6 +32,17 @@ class MainScreenViewController: BaseViewController, ModuleInputProvider {
         refreshControl.endRefreshing()
     }
     @IBAction func touchNewTask(_ sender: UIButton) {
+        //
+//        Alamofire.request("http://localhost:3000/posts").responseJSON { response in
+//            switch response.result {
+//            case .success(let value):
+//                print("JSON: \(value)") // serialized json response
+//            case .failure(let error): break
+//                
+//            }
+//        }
+        //
+        
         let alertController = UIAlertController(title: "Select task type", message: "Text, photo or date", preferredStyle: .actionSheet)
         
         alertController.addAction(UIAlertAction(title: "Add text task", style: .default) { _ in

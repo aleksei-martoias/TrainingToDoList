@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.5.0)
   - DiKit (0.4.0):
     - DiKit/CommonAssemblies (= 0.4.0)
     - DiKit/Core (= 0.4.0)
@@ -10,7 +11,19 @@ PODS:
   - Dip (5.0.4)
   - Dip-UI (1.1):
     - Dip (~> 5.0)
+  - ObjectMapper (2.2.8)
   - PKHUD (4.2.3)
+  - PromiseKit (4.2.2):
+    - PromiseKit/Foundation (= 4.2.2)
+    - PromiseKit/QuartzCore (= 4.2.2)
+    - PromiseKit/UIKit (= 4.2.2)
+  - PromiseKit/CorePromise (4.2.2)
+  - PromiseKit/Foundation (4.2.2):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.2.2):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.2.2):
+    - PromiseKit/CorePromise
   - Realm (2.8.3):
     - Realm/Headers (= 2.8.3)
   - Realm/Headers (2.8.3)
@@ -28,22 +41,28 @@ PODS:
     - ViperKit/Core
 
 DEPENDENCIES:
+  - Alamofire
   - Dip (~> 5.0.0)
   - Dip-UI
+  - ObjectMapper (~> 2.2)
+  - PromiseKit
   - RealmSwift
   - ViperKit
   - ViperKit/Dip
   - ViperKit/PKHUD
 
 SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   DiKit: ca953fe734aa2c818b47b95ef1b500c0a95172c0
   Dip: 6460091adcf84ae8765f4927b85b49e6a3b67bfe
   Dip-UI: 1c64807d98d493281e87651921b80e1c2dce1f2c
+  ObjectMapper: 3d571bb5af471c779e1160828cd9ad5c4ef90958
   PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
+  PromiseKit: 00e8886881f151c7e573d06b437915b0bb2970ec
   Realm: 3601ef091c8c499a31101d8563b991e75546cdce
   RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
   ViperKit: f01616cbd3e6ad489812c600d1af97f0c17c5185
 
-PODFILE CHECKSUM: 72a0368deaf15b96164d3f877965609f74916791
+PODFILE CHECKSUM: dcf91355e5663c71cf47871b0281f4fb2717b7ec
 
 COCOAPODS: 1.2.1

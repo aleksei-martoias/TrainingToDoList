@@ -9,5 +9,5 @@
 import Foundation
 
 protocol DateTaskCreationScreenInteractorOutput: class {
-
+    func popController()
 }

@@ -29,6 +29,7 @@ class DateTaskCreationScreenModuleConfigurator {
         interactor.output = presenter
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             interactor.dataSource = try? appDelegate.container.resolve() as DataSource
+            interactor.networkLayer = try? appDelegate.container.resolve() as NetworkLayerInputInput
         }
 
         presenter.interactor = interactor

@@ -14,4 +14,7 @@ target 'TrainingToDoList' do
   pod 'ViperKit'
   pod 'ViperKit/PKHUD'
   pod 'ViperKit/Dip'
+  pod 'Alamofire'
+  pod 'PromiseKit'
+  pod 'ObjectMapper', '~> 2.2'
 end

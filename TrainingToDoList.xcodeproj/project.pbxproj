@@ -25,13 +25,10 @@
 		4D1A842D8145203DAEB81229 /* ImageTaskCreationScreenModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0AAFDB72A60094F097464D /* ImageTaskCreationScreenModuleInput.swift */; };
 		4F39BA33281FBC9EDF7E8021 /* ImageTaskCreationScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8840AF5FCFA6D2C71EFDAB /* ImageTaskCreationScreenInteractorInput.swift */; };
 		565BE701F2D32107B4BE5D12 /* TextTaskCreationScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0429EDAB4B3453641610E1 /* TextTaskCreationScreenConfigurator.swift */; };
+		5700235B1F262CF6002F89AB /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700235A1F262CF6002F89AB /* NetworkLayer.swift */; };
 		572DD0AB1F1753EB00C7A62F /* DataSourceOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572DD0AA1F1753EB00C7A62F /* DataSourceOld.swift */; };
 		572DD0AD1F176CB800C7A62F /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572DD0AC1F176CB800C7A62F /* Types.swift */; };
-		572DD0AF1F17AF8F00C7A62F /* HeaderTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572DD0AE1F17AF8F00C7A62F /* HeaderTextViewController.swift */; };
-		572DD0B21F17B60C00C7A62F /* HeaderImageViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572DD0B11F17B60C00C7A62F /* HeaderImageViewcontroller.swift */; };
-		572DD0B41F17B64800C7A62F /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572DD0B31F17B64800C7A62F /* DateViewController.swift */; };
 		572DE03B1F1F49740064C70D /* CoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572DE03A1F1F49740064C70D /* CoreAssembly.swift */; };
-		572DE03D1F1F69460064C70D /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572DE03C1F1F69460064C70D /* Configurator.swift */; };
 		573B07A41F20DCDB00769485 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573B07A31F20DCDB00769485 /* Picker.swift */; };
 		573B07A81F20F02600769485 /* PickerOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573B07A71F20F02600769485 /* PickerOutput.swift */; };
 		573B07AA1F20F89C00769485 /* PickerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573B07A91F20F89C00769485 /* PickerInput.swift */; };
@@ -43,7 +40,6 @@
 		5748F6FB1F1E16A500D2B7FE /* TypesForRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748F6FA1F1E16A500D2B7FE /* TypesForRealm.swift */; };
 		5748F6FD1F1E1B4700D2B7FE /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748F6FC1F1E1B4700D2B7FE /* DataSource.swift */; };
 		5752AA281F161862005D4F62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752AA271F161862005D4F62 /* AppDelegate.swift */; };
-		5752AA2A1F161862005D4F62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752AA291F161862005D4F62 /* ViewController.swift */; };
 		5752AA2D1F161862005D4F62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5752AA2B1F161862005D4F62 /* Main.storyboard */; };
 		5752AA2F1F161862005D4F62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5752AA2E1F161862005D4F62 /* Assets.xcassets */; };
 		5752AA321F161862005D4F62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5752AA301F161862005D4F62 /* LaunchScreen.storyboard */; };
@@ -97,13 +93,10 @@
 		5092ACE33CB601620ED27468 /* DateTaskCreationScreenViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateTaskCreationScreenViewOutput.swift; sourceTree = "<group>"; };
 		51CC5F3EE6754FEAD668EC58 /* MainScreenViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainScreenViewInput.swift; sourceTree = "<group>"; };
 		545D8AFA56A5B5688D36C332 /* TextTaskCreationScreenInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextTaskCreationScreenInitializer.swift; sourceTree = "<group>"; };
+		5700235A1F262CF6002F89AB /* NetworkLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		572DD0AA1F1753EB00C7A62F /* DataSourceOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceOld.swift; sourceTree = "<group>"; };
 		572DD0AC1F176CB800C7A62F /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
-		572DD0AE1F17AF8F00C7A62F /* HeaderTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTextViewController.swift; sourceTree = "<group>"; };
-		572DD0B11F17B60C00C7A62F /* HeaderImageViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderImageViewcontroller.swift; sourceTree = "<group>"; };
-		572DD0B31F17B64800C7A62F /* DateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		572DE03A1F1F49740064C70D /* CoreAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreAssembly.swift; sourceTree = "<group>"; };
-		572DE03C1F1F69460064C70D /* Configurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 		573B07A31F20DCDB00769485 /* Picker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Picker.swift; path = ImageTaskCreationScreen/Interactor/Picker.swift; sourceTree = "<group>"; };
 		573B07A71F20F02600769485 /* PickerOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickerOutput.swift; path = ImageTaskCreationScreen/Interactor/PickerOutput.swift; sourceTree = "<group>"; };
 		573B07A91F20F89C00769485 /* PickerInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerInput.swift; sourceTree = "<group>"; };
@@ -116,7 +109,6 @@
 		5748F6FC1F1E1B4700D2B7FE /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		5752AA241F161862005D4F62 /* TrainingToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainingToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5752AA271F161862005D4F62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5752AA291F161862005D4F62 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5752AA2C1F161862005D4F62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5752AA2E1F161862005D4F62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5752AA311F161862005D4F62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -298,6 +290,7 @@
 				573B07A71F20F02600769485 /* PickerOutput.swift */,
 				5748F6F81F1DFC4200D2B7FE /* RepositoryService.swift */,
 				5748F6FC1F1E1B4700D2B7FE /* DataSource.swift */,
+				5700235A1F262CF6002F89AB /* NetworkLayer.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -325,13 +318,7 @@
 			children = (
 				573B07A21F20DA1D00769485 /* Entities */,
 				5748F6F71F1DFC0000D2B7FE /* Services */,
-				57F0113F1F1C99FF00010241 /* Model */,
 				5752AA3A1F1618EC005D4F62 /* SupportingFiles */,
-				5752AA291F161862005D4F62 /* ViewController.swift */,
-				572DE03C1F1F69460064C70D /* Configurator.swift */,
-				572DD0AE1F17AF8F00C7A62F /* HeaderTextViewController.swift */,
-				572DD0B11F17B60C00C7A62F /* HeaderImageViewcontroller.swift */,
-				572DD0B31F17B64800C7A62F /* DateViewController.swift */,
 				572DD0B01F17AFA000C7A62F /* Core */,
 				572DD0A91F17539700C7A62F /* Cells */,
 				5752AA2B1F161862005D4F62 /* Main.storyboard */,
@@ -354,13 +341,6 @@
 				572DE03A1F1F49740064C70D /* CoreAssembly.swift */,
 			);
 			name = SupportingFiles;
-			sourceTree = "<group>";
-		};
-		57F0113F1F1C99FF00010241 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		5EE57EF509EA5ADF9F52A15B /* Configurator */ = {
@@ -664,25 +644,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				572DE03D1F1F69460064C70D /* Configurator.swift in Sources */,
-				572DD0B41F17B64800C7A62F /* DateViewController.swift in Sources */,
 				572DD0AB1F1753EB00C7A62F /* DataSourceOld.swift in Sources */,
 				573CAB0C1F18BA33000615F1 /* BottomScrollConstrait.swift in Sources */,
 				572DE03B1F1F49740064C70D /* CoreAssembly.swift in Sources */,
 				5748F6F91F1DFC4200D2B7FE /* RepositoryService.swift in Sources */,
 				5752AA3C1F162259005D4F62 /* TextViewCell.swift in Sources */,
-				5752AA2A1F161862005D4F62 /* ViewController.swift in Sources */,
-				572DD0B21F17B60C00C7A62F /* HeaderImageViewcontroller.swift in Sources */,
 				572DD0AD1F176CB800C7A62F /* Types.swift in Sources */,
 				573B07A81F20F02600769485 /* PickerOutput.swift in Sources */,
 				5752AA421F1622FB005D4F62 /* DateViewCell.swift in Sources */,
 				5740C05A1F21E0FB008B57BE /* TableViewManagerInput.swift in Sources */,
 				573B07AA1F20F89C00769485 /* PickerInput.swift in Sources */,
 				5752AA281F161862005D4F62 /* AppDelegate.swift in Sources */,
-				572DD0AF1F17AF8F00C7A62F /* HeaderTextViewController.swift in Sources */,
 				5748F6FB1F1E16A500D2B7FE /* TypesForRealm.swift in Sources */,
 				5752AA3E1F16228C005D4F62 /* PhotoViewCell.swift in Sources */,
 				5748F6FD1F1E1B4700D2B7FE /* DataSource.swift in Sources */,
+				5700235B1F262CF6002F89AB /* NetworkLayer.swift in Sources */,
 				024FCEB614C17A6FCEF861AA /* MainScreenViewInput.swift in Sources */,
 				880C4C62A2D754AA49AC31BF /* MainScreenViewOutput.swift in Sources */,
 				41115415F847DBDDAAF0AF2F /* MainScreenViewController.swift in Sources */,

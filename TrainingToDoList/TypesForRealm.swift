@@ -8,6 +8,7 @@
 
 import Realm
 import RealmSwift
+import Alamofire
 
 class HeaderText: Object {
     dynamic var headerLabel: String?
@@ -28,6 +29,19 @@ class HeaderText: Object {
     
     override static func primaryKey() -> String? {
         return "id"
+    }
+    
+}
+
+extension HeaderText: NetworkLayerInput {
+    func getParams() -> Parameters {
+        let parameters: Parameters = [
+            "headerLabel" : headerLabel ?? "",
+            "textLabel": textLabel ?? "",
+            "id" : id ?? 0
+        ]
+        
+        return parameters
     }
 }
 
@@ -53,6 +67,18 @@ class ImageHeader: Object {
     }
 }
 
+extension ImageHeader: NetworkLayerInput {
+    func getParams() -> Parameters {
+        let parameters: Parameters = [
+            "headerLabel" : headerLabel ?? "",
+            
+            "id" : id ?? 0
+        ]
+        
+        return parameters
+    }
+}
+
 class Date: Object {
     dynamic var dateLabel: String?
     dynamic var id: String?
@@ -70,5 +96,17 @@ class Date: Object {
     
     override static func primaryKey() -> String? {
         return "id"
+    }
+    
+}
+
+extension Date: NetworkLayerInput {
+    func getParams() -> Parameters {
+        let parameters: Parameters = [
+            "dateLabel" : dateLabel ?? ""
+            //"id" : id ?? 0
+        ]
+        
+        return parameters
     }
 }

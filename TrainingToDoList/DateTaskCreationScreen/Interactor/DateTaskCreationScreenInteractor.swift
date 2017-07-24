@@ -12,6 +12,7 @@ class DateTaskCreationScreenInteractor {
     
     var editOb: Date?
     var dataSource: DataSource!
+    var networkLayer: NetworkLayerInputInput!
 }
 
 extension DateTaskCreationScreenInteractor: DateTaskCreationScreenInteractorInput{
@@ -19,7 +20,12 @@ extension DateTaskCreationScreenInteractor: DateTaskCreationScreenInteractorInpu
         if editOb != nil {
             editOb?.update(field: data.dateLabel!)
         } else {
-            dataSource.pushData(push: data.dateLabel!)
+            networkLayer.post(task: data, success: { (_) in
+                self.dataSource.pushData(push: data.dateLabel!)
+                self.output.popController()
+            }, error: {(error: Error) -> Void in
+                //self.output.showAlert()
+            })
         }
     }
     

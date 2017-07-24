@@ -354,12 +354,17 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicate" destination="GZ2-id-buy" id="NyO-fo-YeY"/>
                         <outlet property="datePicker" destination="GPg-2a-lP0" id="fMa-P6-6jn"/>
                         <outlet property="titleField" destination="dvC-Wa-qrB" id="gHC-nn-L4H"/>
                         <outlet property="toolBar" destination="ZIb-FY-ntn" id="zeI-U0-nrK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4s5-G2-5EI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="GZ2-id-buy">
+                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
                 <customObject id="lZV-jR-7ct" customClass="DateTaskCreationScreenModuleInitializer" customModule="TrainingToDoList" customModuleProvider="target">
                     <connections>
                         <outlet property="datetaskcreationscreenViewController" destination="Gfv-kc-eK1" id="wDU-4D-f6Y"/>

@@ -23,6 +23,9 @@ class CoreAssembly {
         container.register(.singleton) { Picker() }
         .implements(PickerInput.self)
         
+        container.register(.singleton) { NetworkLayer() }
+        .implements(NetworkLayerInputInput.self)
+        
         return container
     }
 }
