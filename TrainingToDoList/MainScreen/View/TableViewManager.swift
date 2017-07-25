@@ -84,18 +84,18 @@ class TableViewManager: NSObject, UITableViewDataSource {
             switch indexPath.section {
             case RecordTypes.textType.hashValue:
                 if let headerText = self.output.getTask(inAr: RecordTypes.textType, inPos: indexPath.row) {
-                    self.output.deleteTask(data: headerText)
                     self.output.deleteFromServer(id: Int(((headerText as? HeaderText)?.id)!) ?? 0)
+                    self.output.deleteTask(data: headerText)
                 }
             case RecordTypes.imageType.hashValue:
                 if let imageHeader = self.output.getTask(inAr: RecordTypes.imageType, inPos: indexPath.row) {
+                     self.output.deleteFromServer(id: Int(((imageHeader as? ImageHeader)?.id)!) ?? 0)
                     self.output.deleteTask(data: imageHeader)
-                    self.output.deleteFromServer(id: Int(((imageHeader as? ImageHeader)?.id)!) ?? 0)
                 }
             case RecordTypes.dateType.hashValue:
                 if let date = self.output.getTask(inAr: RecordTypes.dateType, inPos: indexPath.row) {
-                    self.output.deleteTask(data: date)
                     self.output.deleteFromServer(id: Int(((date as? Date)?.id)!) ?? 0)
+                    self.output.deleteTask(data: date)
                 }
             default:
                 return
