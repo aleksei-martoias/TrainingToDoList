@@ -11,6 +11,7 @@ class ImageTaskCreationScreenInteractor {
 
     weak var output: ImageTaskCreationScreenInteractorOutput!
     var picker: PickerInput?
+    var networkLayer: NetworkLayerInputInput!
     
     var dataSource: DataSource!
     var editOb: ImageHeader?
@@ -25,7 +26,12 @@ extension ImageTaskCreationScreenInteractor: ImageTaskCreationScreenInteractorIn
         if editOb != nil {
             editOb?.update(field: data.headerLabel!, data.image!)
         } else {
-            dataSource.pushData(push: data.headerLabel!, push: data.image!)
+            networkLayer.post(task: data, success: { (_) in
+                self.dataSource.pushData(push: data.headerLabel!, push: data.image!)
+                self.output.popController()
+            }, error: {(error: Error) -> Void in
+                self.output.showAlert()
+            })
         }
     }
     

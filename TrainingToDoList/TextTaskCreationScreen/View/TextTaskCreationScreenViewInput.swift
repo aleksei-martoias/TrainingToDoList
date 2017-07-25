@@ -8,10 +8,9 @@
 
 protocol TextTaskCreationScreenViewInput: class {
 
-    /**
-        @author Aleksei
-        Setup initial state of the view
-    */
+    func popController()
+    
+    func showAlert()
 
     func setupInitialState()
 }

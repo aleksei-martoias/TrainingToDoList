@@ -9,6 +9,7 @@
 class TextTaskCreationScreenInteractor {
 
     weak var output: TextTaskCreationScreenInteractorOutput!
+    var networkLayer: NetworkLayerInputInput!
 
     var editOb: HeaderText?
     var dataSource: DataSource!
@@ -20,7 +21,12 @@ extension TextTaskCreationScreenInteractor: TextTaskCreationScreenInteractorInpu
         if editOb != nil {
             editOb?.update(field: data.headerLabel!, data.textLabel!)
         } else {
-            dataSource.pushData(push: data.headerLabel!, push: data.textLabel!)
+            networkLayer.post(task: data, success: { (_) in
+                self.dataSource.pushData(push: data.headerLabel!, push: data.textLabel!)
+                self.output.popController()
+            }, error: {(error: Error) -> Void in
+                self.output.showAlert()
+            })
         }
     }
 

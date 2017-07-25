@@ -16,4 +16,8 @@ protocol MainScreenInteractorInput {
     
     func deleteTask(data: Any)
     
+    func sync()
+    
+    func deleteFromServer(id: Int)
+    
 }

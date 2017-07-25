@@ -24,7 +24,7 @@ extension DateTaskCreationScreenInteractor: DateTaskCreationScreenInteractorInpu
                 self.dataSource.pushData(push: data.dateLabel!)
                 self.output.popController()
             }, error: {(error: Error) -> Void in
-                //self.output.showAlert()
+                self.output.showAlert()
             })
         }
     }

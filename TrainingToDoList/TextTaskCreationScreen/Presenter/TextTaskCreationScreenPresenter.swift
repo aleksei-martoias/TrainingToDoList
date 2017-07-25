@@ -7,7 +7,7 @@
 //
 import ViperKit
 
-class TextTaskCreationScreenPresenter: TextTaskCreationScreenModuleInput, TextTaskCreationScreenInteractorOutput {
+class TextTaskCreationScreenPresenter: TextTaskCreationScreenModuleInput {
 
     weak var view: TextTaskCreationScreenViewInput!
     var interactor: TextTaskCreationScreenInteractorInput!
@@ -33,5 +33,15 @@ extension TextTaskCreationScreenPresenter: TextTaskCreationScreenViewOutput {
         pushingData.headerLabel = headerText
         pushingData.textLabel = text
         interactor.pushOrUpdate(pushingData)
+    }
+}
+
+extension TextTaskCreationScreenPresenter: TextTaskCreationScreenInteractorOutput {
+    func popController() {
+        view.popController()
+    }
+    
+    func showAlert() {
+        view.showAlert()
     }
 }

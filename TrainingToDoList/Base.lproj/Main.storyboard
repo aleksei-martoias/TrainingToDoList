@@ -393,7 +393,7 @@
                     </connections>
                 </datePicker>
             </objects>
-            <point key="canvasLocation" x="1481" y="1146"/>
+            <point key="canvasLocation" x="1481" y="866"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MSy-4e-tfI">

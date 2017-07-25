@@ -16,5 +16,5 @@ target 'TrainingToDoList' do
   pod 'ViperKit/Dip'
   pod 'Alamofire'
   pod 'PromiseKit'
-  pod 'ObjectMapper', '~> 2.2'
+  pod 'ObjectMapper+Realm'
 end

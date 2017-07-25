@@ -8,10 +8,8 @@
 
 protocol MainScreenViewInput: class {
 
-    /**
-        @author Aleksei
-        Setup initial state of the view
-    */
+    func reloadTable()
 
     func setupInitialState()
+    
 }

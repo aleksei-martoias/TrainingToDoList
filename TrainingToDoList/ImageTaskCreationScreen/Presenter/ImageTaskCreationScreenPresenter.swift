@@ -50,4 +50,12 @@ extension ImageTaskCreationScreenPresenter: ImageTaskCreationScreenInteractorOut
     func setImage(_ img: UIImage) {
         view.setImageInView(img)
     }
+    
+    func popController() {
+        view.popController()
+    }
+    
+    func showAlert() {
+        view.showAlert()
+    }
 }

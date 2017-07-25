@@ -10,5 +10,11 @@ import Foundation
 import UIKit
 
 protocol ImageTaskCreationScreenInteractorOutput: class {
+    
+    func popController()
+    
     func setImage(_ img: UIImage)
+    
+    func showAlert()
+    
 }

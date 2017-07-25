@@ -22,4 +22,6 @@ protocol TableViewManagerOutput {
     
     func openText(objectForEdit: HeaderText?)
     
+    func deleteFromServer(id: Int)
+    
 }

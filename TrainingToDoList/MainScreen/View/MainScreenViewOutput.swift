@@ -19,4 +19,6 @@ protocol MainScreenViewOutput {
     
     func openTextView()
     
+    func sync()
+    
 }

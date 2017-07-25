@@ -22,7 +22,9 @@ class MainScreenPresenter: MainScreenModuleInput, ModuleInput {
 
 
 extension MainScreenPresenter: MainScreenInteractorOutput {
-    
+    func reloadTable() {
+        view.reloadTable()
+    }
 }
 
 extension MainScreenPresenter: MainScreenViewOutput {
@@ -40,6 +42,10 @@ extension MainScreenPresenter: MainScreenViewOutput {
     
     func openTextView() {
         router.openTextTaskScreen(objectForEdit: nil)
+    }
+    
+    func sync() {
+        interactor.sync()
     }
 }
 extension MainScreenPresenter: TableViewManagerOutput {
@@ -67,4 +73,9 @@ extension MainScreenPresenter: TableViewManagerOutput {
     func deleteTask(data: Any) {
         interactor.deleteTask(data: data)
     }
+    
+    func deleteFromServer(id: Int) {
+        interactor.deleteFromServer(id: id)
+    }
+    
 }

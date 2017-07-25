@@ -39,9 +39,15 @@ extension DateTaskCreationScreenPresenter: DateTaskCreationScreenViewOutput {
 }
 
 extension DateTaskCreationScreenPresenter: DateTaskCreationScreenInteractorOutput {
+    
     func popController() {
         view.popController()
     }
+    
+    func showAlert() {
+        view.showAlert()
+    }
+    
 }
 
 

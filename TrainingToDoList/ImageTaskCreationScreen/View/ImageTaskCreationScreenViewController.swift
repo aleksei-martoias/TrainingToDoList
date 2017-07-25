@@ -21,8 +21,6 @@ class ImageTaskCreationScreenViewController: BaseViewController, ModuleInputProv
             let img = imageView.image {
             output.createEntityAndPush(headerText, img)
         }
-        
-        navigationController?.popViewController(animated: true)
     }
     @IBAction func selectPhotoAction(_ sender: UIButton) {
         output.showPicker(self)
@@ -49,5 +47,17 @@ class ImageTaskCreationScreenViewController: BaseViewController, ModuleInputProv
 extension ImageTaskCreationScreenViewController: ImageTaskCreationScreenViewInput {
     func setImageInView(_ img: UIImage) {
         imageView.image = img
+    }
+    
+    func popController() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func showAlert() {
+        let alertController = UIAlertController(title: "Error", message: "Can not upload the data", preferredStyle: .actionSheet)
+        
+        alertController.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        
+        present(alertController, animated: true)
     }
 }

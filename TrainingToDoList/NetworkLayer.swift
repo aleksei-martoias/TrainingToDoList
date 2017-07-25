@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import ObjectMapper
 
 protocol NetworkLayerInput {
     func getParams() -> Parameters
@@ -15,7 +16,10 @@ protocol NetworkLayerInput {
 protocol NetworkLayerInputInput {
     func post(task name: NetworkLayerInput, success: @escaping (Any)->(), error: @escaping (Error)->())
     
-    func get()
+    func get(synch: @escaping ([Any]) -> ())
+    
+    func delete(id: Int)
+    
 }
 
 class NetworkLayer: NetworkLayerInputInput {
@@ -30,7 +34,41 @@ class NetworkLayer: NetworkLayerInputInput {
         }
     }
     
-    func get() {
-        
+    func get(synch: @escaping ([Any]) -> ()) {
+        Alamofire.request("http://localhost:3000/posts").responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                if let dict = value as? [[String : Any]] {
+                    synch(self.parse(dict: dict))
+                }
+            case .failure(let error):
+                break
+            }
+        }
+    }
+    
+    func delete(id: Int) {
+        request("http://localhost:3000/posts/" + "/(id)", method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: nil)
+    }
+    
+    func parse(dict: [[String : Any]]) -> [Any] {
+        var res = [Any]()
+        for item in dict {
+            switch item["entity"] as! String{
+            case "Date":
+                if let date = Mapper<Date>().map(JSON: item) {
+                    res.append(date as Any)
+                }
+            case "HeaderText":
+                if let date = Mapper<HeaderText>().map(JSON: item) {
+                    res.append(date as Any)
+                }
+            case "ImageHeader":
+                break
+            default:
+                return res
+            }
+        }
+        return res
     }
 }

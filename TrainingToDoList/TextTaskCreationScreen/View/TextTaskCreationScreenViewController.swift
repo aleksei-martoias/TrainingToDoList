@@ -9,7 +9,7 @@
 import UIKit
 import ViperKit
 
-class TextTaskCreationScreenViewController: BaseViewController, TextTaskCreationScreenViewInput, ModuleInputProvider {
+class TextTaskCreationScreenViewController: BaseViewController, ModuleInputProvider {
 
     var moduleInput: ModuleInput!
     var output: TextTaskCreationScreenViewOutput!
@@ -45,5 +45,19 @@ class TextTaskCreationScreenViewController: BaseViewController, TextTaskCreation
 
     // MARK: TextTaskCreationScreenViewInput
     func setupInitialState() {
+    }
+}
+
+extension TextTaskCreationScreenViewController: TextTaskCreationScreenViewInput {
+    func popController() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func showAlert() {
+        let alertController = UIAlertController(title: "Error", message: "Can not upload the data", preferredStyle: .actionSheet)
+        
+        alertController.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        
+        present(alertController, animated: true)
     }
 }

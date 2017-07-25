@@ -31,6 +31,7 @@ class ImageTaskCreationScreenModuleConfigurator {
             interactor.picker = try? appDelegate.container.resolve() as PickerInput
             interactor.picker?.set(output: interactor)
             interactor.dataSource = try? appDelegate.container.resolve() as DataSource
+            interactor.networkLayer = try? appDelegate.container.resolve() as NetworkLayerInputInput
         }
 
         presenter.interactor = interactor

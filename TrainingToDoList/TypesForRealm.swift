@@ -9,11 +9,20 @@
 import Realm
 import RealmSwift
 import Alamofire
+import ObjectMapper
+import ObjectMapper_Realm
 
-class HeaderText: Object {
+class HeaderText: Object, Mappable {
     dynamic var headerLabel: String?
     dynamic var textLabel: String?
     dynamic var id: String?
+    
+    required convenience init?(map: Map) {
+        self.init()
+        headerLabel = try? map.value("headerLabel")
+        textLabel = try? map.value("textLabel")
+        id = try? map.value("id")
+    }
     
     func update(field header: String, _ text: String) {
         do {
@@ -27,6 +36,12 @@ class HeaderText: Object {
         }
     }
     
+    func mapping(map: Map) {
+        headerLabel <- map["headerLabel"]
+        textLabel <- map["textLabel"]
+        id <- map["id"]
+    }
+    
     override static func primaryKey() -> String? {
         return "id"
     }
@@ -38,7 +53,7 @@ extension HeaderText: NetworkLayerInput {
         let parameters: Parameters = [
             "headerLabel" : headerLabel ?? "",
             "textLabel": textLabel ?? "",
-            "id" : id ?? 0
+            "entity": "HeaderText"
         ]
         
         return parameters
@@ -71,17 +86,22 @@ extension ImageHeader: NetworkLayerInput {
     func getParams() -> Parameters {
         let parameters: Parameters = [
             "headerLabel" : headerLabel ?? "",
-            
-            "id" : id ?? 0
+            "entity": "ImageHeader"
         ]
         
         return parameters
     }
 }
 
-class Date: Object {
+class Date: Object, Mappable {
     dynamic var dateLabel: String?
     dynamic var id: String?
+    
+    required convenience init?(map: Map) {
+        self.init()
+        dateLabel = try? map.value("dateLabel")
+        id = try? map.value("id")
+    }
     
     func update(field date: String) {
         do {
@@ -98,15 +118,46 @@ class Date: Object {
         return "id"
     }
     
+    func mapping(map: Map) {
+        dateLabel <- map["dateLabel"]
+        id <- (map["id"], IntTransform())
+    }
+    
 }
 
 extension Date: NetworkLayerInput {
     func getParams() -> Parameters {
         let parameters: Parameters = [
-            "dateLabel" : dateLabel ?? ""
-            //"id" : id ?? 0
+            "dateLabel" : dateLabel ?? "",
+            "entity": "Date"
         ]
         
         return parameters
+    }
+}
+
+class IntTransform: TransformType {
+    public typealias Object = String
+    public typealias JSON = Int
+    
+    public init() {}
+    
+    open func transformFromJSON(_ value: Any?) -> String? {
+        if let timeInt = value as? Int {
+            return "\(timeInt)"
+        }
+        
+        if let timeStr = value as? String {
+            return timeStr
+        }
+        
+        return nil
+    }
+    
+    open func transformToJSON(_ value: String?) -> Int? {
+        if let date = Int(value ?? "") {
+            return date
+        }
+        return nil
     }
 }

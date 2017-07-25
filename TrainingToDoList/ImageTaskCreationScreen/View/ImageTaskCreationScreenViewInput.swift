@@ -12,4 +12,9 @@ protocol ImageTaskCreationScreenViewInput: class {
     func setImageInView(_ img: UIImage)
 
     func setupInitialState()
+    
+    func popController()
+    
+    func showAlert()
+    
 }

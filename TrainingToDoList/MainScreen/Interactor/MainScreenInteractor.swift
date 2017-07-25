@@ -9,6 +9,7 @@
 class MainScreenInteractor {
 
     weak var output: MainScreenInteractorOutput!
+    var networkLayer: NetworkLayerInputInput!
     
     var dataSource: DataSource!
 
@@ -41,6 +42,25 @@ extension MainScreenInteractor: MainScreenInteractorInput {
     
     func deleteTask(data: Any) {
         dataSource.delete(setOb: data)
+    }
+    
+    func sync() {
+        networkLayer.get(synch: { (data: [Any]) in
+            for item in data {
+                if let data = item as? HeaderText {
+                    self.dataSource.pushData(push: data.headerLabel!, push: data.textLabel!)
+                } else if let data = item as? ImageHeader {
+                    
+                } else if let data = item as? Date {
+                    self.dataSource.pushData(push: data.dateLabel!)
+                }
+            }
+            self.output.reloadTable()
+        })
+    }
+    
+    func deleteFromServer(id: Int) {
+        networkLayer.delete(id: id)
     }
     
 }

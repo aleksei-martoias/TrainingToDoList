@@ -9,5 +9,9 @@
 import Foundation
 
 protocol TextTaskCreationScreenInteractorOutput: class {
-
+    
+    func popController()
+    
+    func showAlert()
+    
 }
