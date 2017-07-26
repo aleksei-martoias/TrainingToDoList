@@ -59,6 +59,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ViperKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -77,16 +82,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>146C1EDC8CA092E9F3EDEF73D1294656</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1A77D465E0FDFF943F8398CBCB5FAEE4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>1BECF98F5D80315F4CA333AB7B4CB512</key>
 		<dict>
 			<key>primary</key>
@@ -97,7 +92,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>50F86DD29D742273D723F1D152525061</key>
+		<key>619C7DAEACEA575210F6093F9AC685C8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -108,6 +103,16 @@
 			<true/>
 		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8A4FBFF2A19EE528CBD4950FFECE00A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8B5E779FD30823C11F1ADDB20107E5B3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -123,6 +128,11 @@
 			<true/>
 		</dict>
 		<key>D7A75F149082140741FC1E0B5B2863C8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FBF4D36F723EB9DFFD61C7C300D880B2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

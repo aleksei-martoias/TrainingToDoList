@@ -14,4 +14,6 @@ protocol TextTaskCreationScreenInteractorOutput: class {
     
     func showAlert()
     
+    func reloadTableR()
+    
 }

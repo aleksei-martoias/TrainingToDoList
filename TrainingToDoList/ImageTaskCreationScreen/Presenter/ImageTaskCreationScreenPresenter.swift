@@ -8,11 +8,12 @@
 import UIKit
 import ViperKit
 
-class ImageTaskCreationScreenPresenter: ImageTaskCreationScreenModuleInput {
+class ImageTaskCreationScreenPresenter: ImageTaskCreationScreenModuleInput, ModuleInput {
 
     weak var view: ImageTaskCreationScreenViewInput!
     var interactor: ImageTaskCreationScreenInteractorInput!
     var router: ImageTaskCreationScreenRouterInput!
+    var parentPresenter: ImageTaskCreationScreenModuleOutput?
 
     func viewIsReady() {
 
@@ -20,6 +21,10 @@ class ImageTaskCreationScreenPresenter: ImageTaskCreationScreenModuleInput {
     
     func setObjectForEdit(_ data: ImageHeader?) {
         interactor.setObjectForEdit(data)
+    }
+    
+    func setParentPresenter(_ presenter: MainScreenPresenter) {
+        parentPresenter = presenter
     }
 }
 
@@ -29,16 +34,16 @@ extension ImageTaskCreationScreenPresenter: ImageTaskCreationScreenViewOutput {
         return interactor.giveDataIfExist()
     }
     
-//    func pushOrUpdate(_ data: ImageHeader) {
-//        interactor.pushOrUpdate(data)
-//    }
-    
     func createEntityAndPush(_ headerText: String, _ img: UIImage) {
         let pushingData = ImageHeader()
         pushingData.headerLabel = headerText
         pushingData.image = UIImagePNGRepresentation(img)!
         
         interactor.pushOrUpdate(pushingData)
+    }
+    
+    func showPhotoSearch() {
+        router.openPhotoSearchScreen()
     }
     
     func showPicker(_ controller: UIViewController) {
@@ -58,4 +63,9 @@ extension ImageTaskCreationScreenPresenter: ImageTaskCreationScreenInteractorOut
     func showAlert() {
         view.showAlert()
     }
+    
+    func reloadTableR() {
+        parentPresenter?.reloadTableR()
+    }
+    
 }

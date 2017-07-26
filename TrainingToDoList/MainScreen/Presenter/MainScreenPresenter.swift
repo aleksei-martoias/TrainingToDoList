@@ -33,15 +33,15 @@ extension MainScreenPresenter: MainScreenViewOutput {
     }
     
     func openDateView() {
-        router.openDateTaskScreen(objectForEdit: nil)
+        router.openDateTaskScreen(objectForEdit: nil, presenter: self)
     }
     
     func openImageView() {
-        router.openImageTaskScreen(objectForEdit: nil)
+        router.openImageTaskScreen(objectForEdit: nil, presenter: self)
     }
     
     func openTextView() {
-        router.openTextTaskScreen(objectForEdit: nil)
+        router.openTextTaskScreen(objectForEdit: nil, presenter: self)
     }
     
     func sync() {
@@ -50,15 +50,15 @@ extension MainScreenPresenter: MainScreenViewOutput {
 }
 extension MainScreenPresenter: TableViewManagerOutput {
     func openDate(objectForEdit: Date?) {
-        router.openDateTaskScreen(objectForEdit: objectForEdit)
+        router.openDateTaskScreen(objectForEdit: objectForEdit, presenter: self)
     }
     
     func openImage(objectForEdit: ImageHeader?) {
-        router.openImageTaskScreen(objectForEdit: objectForEdit)
+        router.openImageTaskScreen(objectForEdit: objectForEdit, presenter: self)
     }
     
     func openText(objectForEdit: HeaderText?) {
-        router.openTextTaskScreen(objectForEdit: objectForEdit)
+        router.openTextTaskScreen(objectForEdit: objectForEdit, presenter: self)
     }
 
     
@@ -78,4 +78,10 @@ extension MainScreenPresenter: TableViewManagerOutput {
         interactor.deleteFromServer(id: id)
     }
     
+}
+
+extension MainScreenPresenter: DateTaskCreationScreenModuleOutput, ImageTaskCreationScreenModuleOutput, TextTaskCreationScreenModuleOutput {
+    func reloadTableR() {
+        view.reloadTable()
+    }
 }

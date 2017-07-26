@@ -12,11 +12,17 @@
 		14AD6574822706E73128760B /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E86DC8EEDCFFB0C24DDB721 /* MainScreenPresenter.swift */; };
 		1A7115B461FE2EE072D728A1 /* MainScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C9AC08227A8D2F80497467 /* MainScreenInteractorInput.swift */; };
 		1B1B37FDE40A92AD51030047 /* TextTaskCreationScreenInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D8AFA56A5B5688D36C332 /* TextTaskCreationScreenInitializer.swift */; };
+		2722D29CB6C11328AF2AEEC3 /* FlickerInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C001E157E935B92F59681E86 /* FlickerInteractorOutput.swift */; };
 		28405B4888B5B60DA823B42F /* TextTaskCreationScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F633B9560A3D8E9F7A11B0 /* TextTaskCreationScreenViewController.swift */; };
 		2A2CD7D5657683FBDABE0A89 /* TextTaskCreationScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B9C63A6C410B623BBC3F61 /* TextTaskCreationScreenRouter.swift */; };
+		2A91972BAF81286D0428B5E7 /* FlickerViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E121E3654A61FC46219E4 /* FlickerViewOutput.swift */; };
 		2C78176F014796EB594389AD /* ImageTaskCreationScreenInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4931F9A11919B1607A1174 /* ImageTaskCreationScreenInitializer.swift */; };
+		359DBC80F91C4943AD3EDB5F /* FlickerModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50D39DFBB017E54FA283C8B /* FlickerModuleInput.swift */; };
 		3A722F05F36C83747D9FF514 /* Pods_TrainingToDoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C4BA6E6EC2693BB78818F9E /* Pods_TrainingToDoList.framework */; };
 		3A89966A8D2908AA340BB377 /* ImageTaskCreationScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BDC5701AF04BDD9212B1A3 /* ImageTaskCreationScreenConfigurator.swift */; };
+		3CADBE736B5B8973F2040DFB /* FlickerConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F111F63829A721A66FF299B /* FlickerConfigurator.swift */; };
+		3DC2EE8F488EC464835340F8 /* FlickerInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FE9D33FFD0EE68C8E6FAD1 /* FlickerInteractorInput.swift */; };
+		4096522EECB36A3F3E91FDA3 /* FlickerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E769EF0A6118565CFFE42A85 /* FlickerInteractor.swift */; };
 		41115415F847DBDDAAF0AF2F /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFCB9DB08B27EEE20F117D /* MainScreenViewController.swift */; };
 		4142BFC4B41E9485B38AC58B /* DateTaskCreationScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC777D02766E36BAE0F2764 /* DateTaskCreationScreenInteractorInput.swift */; };
 		44CCE858EFC362A9BD26FE77 /* ImageTaskCreationScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F04C21C82A6606C1C1BF2 /* ImageTaskCreationScreenViewOutput.swift */; };
@@ -46,6 +52,15 @@
 		5752AA3C1F162259005D4F62 /* TextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752AA3B1F162259005D4F62 /* TextViewCell.swift */; };
 		5752AA3E1F16228C005D4F62 /* PhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752AA3D1F16228C005D4F62 /* PhotoViewCell.swift */; };
 		5752AA421F1622FB005D4F62 /* DateViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5752AA411F1622FB005D4F62 /* DateViewCell.swift */; };
+		57D0AD351F2884CA0089D3D4 /* DateTaskCreationScreenDateTaskCreationScreenModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0AD341F2884CA0089D3D4 /* DateTaskCreationScreenDateTaskCreationScreenModuleOutput.swift */; };
+		57D0AD391F28896F0089D3D4 /* ImageTaskCreationScreenModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0AD381F28896F0089D3D4 /* ImageTaskCreationScreenModuleOutput.swift */; };
+		57D0AD3B1F288F850089D3D4 /* TextTaskCreationScreenModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0AD3A1F288F850089D3D4 /* TextTaskCreationScreenModuleOutput.swift */; };
+		57D0AD3D1F28AA550089D3D4 /* FlickrSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0AD3C1F28AA550089D3D4 /* FlickrSearcher.swift */; };
+		57D0AD3F1F28AD940089D3D4 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D0AD3E1F28AD940089D3D4 /* SDWebImage.framework */; };
+		57D0AD421F28D7190089D3D4 /* CollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0AD411F28D7190089D3D4 /* CollectionViewManager.swift */; };
+		57D0AD441F28D72F0089D3D4 /* CollectionViewManagerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0AD431F28D72F0089D3D4 /* CollectionViewManagerInput.swift */; };
+		57D0AD471F28E04E0089D3D4 /* SearchResultsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0AD461F28E04E0089D3D4 /* SearchResultsCollectionViewCell.swift */; };
+		57D0AD491F28E0880089D3D4 /* CollectionViewManagerOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0AD481F28E0880089D3D4 /* CollectionViewManagerOutput.swift */; };
 		583627A7A8819F09E4073DF4 /* TextTaskCreationScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0095B0CB79787CBBA06DE70 /* TextTaskCreationScreenViewOutput.swift */; };
 		67FFA63E2ED58A2ABD428897 /* DateTaskCreationScreenInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FA19D5F40229D7DA095F02 /* DateTaskCreationScreenInteractorOutput.swift */; };
 		682301CAB4A6887694D9426A /* DateTaskCreationScreenViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8848ECE630B27C3667F7EF /* DateTaskCreationScreenViewInput.swift */; };
@@ -56,10 +71,15 @@
 		78CB32D1062C12FAB2A83439 /* TextTaskCreationScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE494423421446F87CDCD4D /* TextTaskCreationScreenPresenter.swift */; };
 		78D0952B877AD25476734AFC /* DateTaskCreationScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092ACE33CB601620ED27468 /* DateTaskCreationScreenViewOutput.swift */; };
 		7C511E3426AE2B0B46CA30FF /* MainScreenInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9DB982DBB2D5804012FAE4 /* MainScreenInteractorOutput.swift */; };
+		7D53F6FE0DE98E70E350AB03 /* FlickerRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1717F271B296205AC10652FE /* FlickerRouterInput.swift */; };
 		880C4C62A2D754AA49AC31BF /* MainScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088316D8B6E1AAB337F83C47 /* MainScreenViewOutput.swift */; };
 		943F0E00B0189A2F786BE597 /* DateTaskCreationScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F22C4FD6FF00632BE45C21 /* DateTaskCreationScreenViewController.swift */; };
+		A083BEAD90E39A4396112FB3 /* FlickerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79F479339D45003161F24F2 /* FlickerPresenter.swift */; };
 		A1B4588586064F7B4B12B83A /* TextTaskCreationScreenViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADD668DFFB19A68FD6E3AB /* TextTaskCreationScreenViewInput.swift */; };
+		A71AD5F216EC72659A5241C1 /* FlickerInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9942BE596FB09A99BED3E156 /* FlickerInitializer.swift */; };
+		A9F8B60D3EF5B07817782CF1 /* FlickerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771BB08280604EDB25B4876D /* FlickerRouter.swift */; };
 		B8241DBDA575E2CBBEA03752 /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56E74989F57417424AA6863 /* MainScreenRouter.swift */; };
+		B8A25B465ED0C8D8AB48E0E5 /* FlickerViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DD221E1D7D4C0CA42192D1 /* FlickerViewInput.swift */; };
 		C0F7965EE64D984DBC6C018C /* ImageTaskCreationScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DE978052173DFEA044DD52 /* ImageTaskCreationScreenViewController.swift */; };
 		C2F9AF3C5EDD4F639D1827B3 /* DateTaskCreationScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3AE6F8157721696C10AB91 /* DateTaskCreationScreenConfigurator.swift */; };
 		C4227B8ED8A6657B2DF49E73 /* DateTaskCreationScreenModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790D04D5850C8F46BFB4C54 /* DateTaskCreationScreenModuleInput.swift */; };
@@ -72,6 +92,7 @@
 		DBACC734C6107F6E36ACB4D4 /* ImageTaskCreationScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C0B58CAE12B0A2E5CAC6CE /* ImageTaskCreationScreenRouter.swift */; };
 		E07C1A6C20C57DC22F2EC0ED /* TextTaskCreationScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49889B9577E91443E6C658D3 /* TextTaskCreationScreenInteractorInput.swift */; };
 		E597E93BA1AF0CFC68D52038 /* MainScreenInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F768F10C32BCE64A4FD7621A /* MainScreenInitializer.swift */; };
+		E77A3BA1F4735D2EC0BAAA66 /* FlickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6813412CDA6506FB333D43 /* FlickerViewController.swift */; };
 		EDDFBF931187DDBA021A61D9 /* ImageTaskCreationScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B9A78D296EDDBF08E92D1 /* ImageTaskCreationScreenInteractor.swift */; };
 		F0B9CBC6B050C005F126A702 /* MainScreenModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66D0C43A9CA8E59B7BE6C13 /* MainScreenModuleInput.swift */; };
 		F24B4B67D8755A24BD0F1991 /* ImageTaskCreationScreenRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77474E5513CCACADC37B3D13 /* ImageTaskCreationScreenRouterInput.swift */; };
@@ -84,9 +105,12 @@
 		088316D8B6E1AAB337F83C47 /* MainScreenViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainScreenViewOutput.swift; sourceTree = "<group>"; };
 		0E4931F9A11919B1607A1174 /* ImageTaskCreationScreenInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageTaskCreationScreenInitializer.swift; sourceTree = "<group>"; };
 		0F8F04C21C82A6606C1C1BF2 /* ImageTaskCreationScreenViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageTaskCreationScreenViewOutput.swift; sourceTree = "<group>"; };
+		1717F271B296205AC10652FE /* FlickerRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FlickerRouterInput.swift; sourceTree = "<group>"; };
+		1D6813412CDA6506FB333D43 /* FlickerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FlickerViewController.swift; sourceTree = "<group>"; };
 		21C9AC08227A8D2F80497467 /* MainScreenInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainScreenInteractorInput.swift; sourceTree = "<group>"; };
 		22C0B58CAE12B0A2E5CAC6CE /* ImageTaskCreationScreenRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageTaskCreationScreenRouter.swift; sourceTree = "<group>"; };
 		307BB0E9AC36F8302E3EB80D /* DateTaskCreationScreenRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateTaskCreationScreenRouter.swift; sourceTree = "<group>"; };
+		36DD221E1D7D4C0CA42192D1 /* FlickerViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FlickerViewInput.swift; sourceTree = "<group>"; };
 		3C4BA6E6EC2693BB78818F9E /* Pods_TrainingToDoList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrainingToDoList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49889B9577E91443E6C658D3 /* TextTaskCreationScreenInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextTaskCreationScreenInteractorInput.swift; sourceTree = "<group>"; };
 		4BE494423421446F87CDCD4D /* TextTaskCreationScreenPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextTaskCreationScreenPresenter.swift; sourceTree = "<group>"; };
@@ -117,32 +141,50 @@
 		5752AA3D1F16228C005D4F62 /* PhotoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewCell.swift; sourceTree = "<group>"; };
 		5752AA411F1622FB005D4F62 /* DateViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewCell.swift; sourceTree = "<group>"; };
 		5790D04D5850C8F46BFB4C54 /* DateTaskCreationScreenModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateTaskCreationScreenModuleInput.swift; sourceTree = "<group>"; };
+		57D0AD341F2884CA0089D3D4 /* DateTaskCreationScreenDateTaskCreationScreenModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTaskCreationScreenDateTaskCreationScreenModuleOutput.swift; sourceTree = "<group>"; };
+		57D0AD381F28896F0089D3D4 /* ImageTaskCreationScreenModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTaskCreationScreenModuleOutput.swift; sourceTree = "<group>"; };
+		57D0AD3A1F288F850089D3D4 /* TextTaskCreationScreenModuleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTaskCreationScreenModuleOutput.swift; sourceTree = "<group>"; };
+		57D0AD3C1F28AA550089D3D4 /* FlickrSearcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrSearcher.swift; sourceTree = "<group>"; };
+		57D0AD3E1F28AD940089D3D4 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Pods/../build/Debug-iphoneos/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
+		57D0AD411F28D7190089D3D4 /* CollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewManager.swift; sourceTree = "<group>"; };
+		57D0AD431F28D72F0089D3D4 /* CollectionViewManagerInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewManagerInput.swift; sourceTree = "<group>"; };
+		57D0AD461F28E04E0089D3D4 /* SearchResultsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsCollectionViewCell.swift; sourceTree = "<group>"; };
+		57D0AD481F28E0880089D3D4 /* CollectionViewManagerOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewManagerOutput.swift; sourceTree = "<group>"; };
 		5868F9289197F132E18EA61F /* ImageTaskCreationScreenInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageTaskCreationScreenInteractorOutput.swift; sourceTree = "<group>"; };
 		5CDFBEA566D9B45A2259291E /* DateTaskCreationScreenInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateTaskCreationScreenInitializer.swift; sourceTree = "<group>"; };
+		66FE9D33FFD0EE68C8E6FAD1 /* FlickerInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FlickerInteractorInput.swift; sourceTree = "<group>"; };
 		6E0429EDAB4B3453641610E1 /* TextTaskCreationScreenConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextTaskCreationScreenConfigurator.swift; sourceTree = "<group>"; };
 		6E86DC8EEDCFFB0C24DDB721 /* MainScreenPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
 		75FA19D5F40229D7DA095F02 /* DateTaskCreationScreenInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateTaskCreationScreenInteractorOutput.swift; sourceTree = "<group>"; };
+		771BB08280604EDB25B4876D /* FlickerRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FlickerRouter.swift; sourceTree = "<group>"; };
 		77474E5513CCACADC37B3D13 /* ImageTaskCreationScreenRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageTaskCreationScreenRouterInput.swift; sourceTree = "<group>"; };
 		7C21A440FC16B357DB5EFFA1 /* MainScreenInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainScreenInteractor.swift; sourceTree = "<group>"; };
 		7F3AE6F8157721696C10AB91 /* DateTaskCreationScreenConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateTaskCreationScreenConfigurator.swift; sourceTree = "<group>"; };
+		839E121E3654A61FC46219E4 /* FlickerViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FlickerViewOutput.swift; sourceTree = "<group>"; };
 		84366191CD403470B7AE2132 /* DateTaskCreationScreenPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateTaskCreationScreenPresenter.swift; sourceTree = "<group>"; };
 		8B7E58E3F05AF0F01F4EC52A /* TextTaskCreationScreenRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextTaskCreationScreenRouterInput.swift; sourceTree = "<group>"; };
 		8D9DB982DBB2D5804012FAE4 /* MainScreenInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainScreenInteractorOutput.swift; sourceTree = "<group>"; };
+		8F111F63829A721A66FF299B /* FlickerConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FlickerConfigurator.swift; sourceTree = "<group>"; };
 		93F633B9560A3D8E9F7A11B0 /* TextTaskCreationScreenViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextTaskCreationScreenViewController.swift; sourceTree = "<group>"; };
+		9942BE596FB09A99BED3E156 /* FlickerInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FlickerInitializer.swift; sourceTree = "<group>"; };
 		99C2180DB676B280D08807B3 /* ImageTaskCreationScreenViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageTaskCreationScreenViewInput.swift; sourceTree = "<group>"; };
 		9EC777D02766E36BAE0F2764 /* DateTaskCreationScreenInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateTaskCreationScreenInteractorInput.swift; sourceTree = "<group>"; };
 		9FCFCB9DB08B27EEE20F117D /* MainScreenViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		A1BDC5701AF04BDD9212B1A3 /* ImageTaskCreationScreenConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageTaskCreationScreenConfigurator.swift; sourceTree = "<group>"; };
 		A2ADD668DFFB19A68FD6E3AB /* TextTaskCreationScreenViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextTaskCreationScreenViewInput.swift; sourceTree = "<group>"; };
+		A50D39DFBB017E54FA283C8B /* FlickerModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FlickerModuleInput.swift; sourceTree = "<group>"; };
 		AC165F73D3A0EFC075B98F90 /* DateTaskCreationScreenInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateTaskCreationScreenInteractor.swift; sourceTree = "<group>"; };
 		AEFEACA80FBCD7C032F0A75D /* DateTaskCreationScreenRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateTaskCreationScreenRouterInput.swift; sourceTree = "<group>"; };
 		B4ED7B0923BFDCA34ABFB5BE /* TextTaskCreationScreenModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextTaskCreationScreenModuleInput.swift; sourceTree = "<group>"; };
 		BB8848ECE630B27C3667F7EF /* DateTaskCreationScreenViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateTaskCreationScreenViewInput.swift; sourceTree = "<group>"; };
 		BFD3705F2BEFD318968D8794 /* Pods-TrainingToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainingToDoList.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrainingToDoList/Pods-TrainingToDoList.release.xcconfig"; sourceTree = "<group>"; };
+		C001E157E935B92F59681E86 /* FlickerInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FlickerInteractorOutput.swift; sourceTree = "<group>"; };
 		D66D0C43A9CA8E59B7BE6C13 /* MainScreenModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainScreenModuleInput.swift; sourceTree = "<group>"; };
+		D79F479339D45003161F24F2 /* FlickerPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FlickerPresenter.swift; sourceTree = "<group>"; };
 		D7DE978052173DFEA044DD52 /* ImageTaskCreationScreenViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageTaskCreationScreenViewController.swift; sourceTree = "<group>"; };
 		DD0AAFDB72A60094F097464D /* ImageTaskCreationScreenModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageTaskCreationScreenModuleInput.swift; sourceTree = "<group>"; };
 		E0B0CE60C80C84700B72D606 /* ImageTaskCreationScreenPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageTaskCreationScreenPresenter.swift; sourceTree = "<group>"; };
+		E769EF0A6118565CFFE42A85 /* FlickerInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FlickerInteractor.swift; sourceTree = "<group>"; };
 		E9B9C63A6C410B623BBC3F61 /* TextTaskCreationScreenRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextTaskCreationScreenRouter.swift; sourceTree = "<group>"; };
 		EC8840AF5FCFA6D2C71EFDAB /* ImageTaskCreationScreenInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageTaskCreationScreenInteractorInput.swift; sourceTree = "<group>"; };
 		ED2C7608479F8499F951494A /* MainScreenConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainScreenConfigurator.swift; sourceTree = "<group>"; };
@@ -161,6 +203,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57D0AD3F1F28AD940089D3D4 /* SDWebImage.framework in Frameworks */,
 				3A722F05F36C83747D9FF514 /* Pods_TrainingToDoList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,6 +220,19 @@
 			);
 			path = Interactor;
 			sourceTree = "<group>";
+		};
+		3766DE37F499F6D8D9B8908E /* Flicker */ = {
+			isa = PBXGroup;
+			children = (
+				AFBFF0EDA6425C19D1B2A3D7 /* View */,
+				3D77EBCFEDBE660ABB5350F9 /* Presenter */,
+				9D58726706B7E3C43F1E2796 /* Interactor */,
+				ADB229EC1C5C199699DE3F30 /* Router */,
+				C7ED39D176092FA22AEC205C /* Configurator */,
+			);
+			name = Flicker;
+			path = TrainingToDoList/TrainingToDoList/Flicker;
+			sourceTree = SOURCE_ROOT;
 		};
 		37E1E5B43539293545D46885 /* View */ = {
 			isa = PBXGroup;
@@ -195,6 +251,16 @@
 				0E4931F9A11919B1607A1174 /* ImageTaskCreationScreenInitializer.swift */,
 			);
 			path = Configurator;
+			sourceTree = "<group>";
+		};
+		3D77EBCFEDBE660ABB5350F9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				57D0AD401F28D6E90089D3D4 /* CollectionManager */,
+				A50D39DFBB017E54FA283C8B /* FlickerModuleInput.swift */,
+				D79F479339D45003161F24F2 /* FlickerPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		3F050DBF92062B2761EF9F44 /* Router */ = {
@@ -220,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				B4ED7B0923BFDCA34ABFB5BE /* TextTaskCreationScreenModuleInput.swift */,
+				57D0AD3A1F288F850089D3D4 /* TextTaskCreationScreenModuleOutput.swift */,
 				4BE494423421446F87CDCD4D /* TextTaskCreationScreenPresenter.swift */,
 			);
 			path = Presenter;
@@ -285,6 +352,7 @@
 		5748F6F71F1DFC0000D2B7FE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				57D0AD3C1F28AA550089D3D4 /* FlickrSearcher.swift */,
 				573B07A31F20DCDB00769485 /* Picker.swift */,
 				573B07A91F20F89C00769485 /* PickerInput.swift */,
 				573B07A71F20F02600769485 /* PickerOutput.swift */,
@@ -323,6 +391,7 @@
 				572DD0A91F17539700C7A62F /* Cells */,
 				5752AA2B1F161862005D4F62 /* Main.storyboard */,
 				BE9455162F7BAC91CCD35DE5 /* MainScreen */,
+				3766DE37F499F6D8D9B8908E /* Flicker */,
 				84E219500437EEB9777A8AF0 /* DateTaskCreationScreen */,
 				D0E5AD114BEEFADD621C9448 /* TextTaskCreationScreen */,
 				BE7EC2E3A6AC276399E989DB /* ImageTaskCreationScreen */,
@@ -341,6 +410,25 @@
 				572DE03A1F1F49740064C70D /* CoreAssembly.swift */,
 			);
 			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		57D0AD401F28D6E90089D3D4 /* CollectionManager */ = {
+			isa = PBXGroup;
+			children = (
+				57D0AD431F28D72F0089D3D4 /* CollectionViewManagerInput.swift */,
+				57D0AD481F28E0880089D3D4 /* CollectionViewManagerOutput.swift */,
+				57D0AD411F28D7190089D3D4 /* CollectionViewManager.swift */,
+				57D0AD451F28E0160089D3D4 /* Cell */,
+			);
+			name = CollectionManager;
+			sourceTree = "<group>";
+		};
+		57D0AD451F28E0160089D3D4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				57D0AD461F28E04E0089D3D4 /* SearchResultsCollectionViewCell.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		5EE57EF509EA5ADF9F52A15B /* Configurator */ = {
@@ -365,6 +453,7 @@
 		6E7BBEF26F2082D39C134785 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57D0AD3E1F28AD940089D3D4 /* SDWebImage.framework */,
 				3C4BA6E6EC2693BB78818F9E /* Pods_TrainingToDoList.framework */,
 			);
 			name = Frameworks;
@@ -410,10 +499,40 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		9D58726706B7E3C43F1E2796 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				66FE9D33FFD0EE68C8E6FAD1 /* FlickerInteractorInput.swift */,
+				C001E157E935B92F59681E86 /* FlickerInteractorOutput.swift */,
+				E769EF0A6118565CFFE42A85 /* FlickerInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		ADB229EC1C5C199699DE3F30 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				1717F271B296205AC10652FE /* FlickerRouterInput.swift */,
+				771BB08280604EDB25B4876D /* FlickerRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		AFBFF0EDA6425C19D1B2A3D7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				36DD221E1D7D4C0CA42192D1 /* FlickerViewInput.swift */,
+				839E121E3654A61FC46219E4 /* FlickerViewOutput.swift */,
+				1D6813412CDA6506FB333D43 /* FlickerViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B18E4E074F951B42AB0D59DD /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
 				DD0AAFDB72A60094F097464D /* ImageTaskCreationScreenModuleInput.swift */,
+				57D0AD381F28896F0089D3D4 /* ImageTaskCreationScreenModuleOutput.swift */,
 				E0B0CE60C80C84700B72D606 /* ImageTaskCreationScreenPresenter.swift */,
 			);
 			path = Presenter;
@@ -481,6 +600,15 @@
 			path = Configurator;
 			sourceTree = "<group>";
 		};
+		C7ED39D176092FA22AEC205C /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				8F111F63829A721A66FF299B /* FlickerConfigurator.swift */,
+				9942BE596FB09A99BED3E156 /* FlickerInitializer.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
 		D0E5AD114BEEFADD621C9448 /* TextTaskCreationScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -516,6 +644,7 @@
 			isa = PBXGroup;
 			children = (
 				5790D04D5850C8F46BFB4C54 /* DateTaskCreationScreenModuleInput.swift */,
+				57D0AD341F2884CA0089D3D4 /* DateTaskCreationScreenDateTaskCreationScreenModuleOutput.swift */,
 				84366191CD403470B7AE2132 /* DateTaskCreationScreenPresenter.swift */,
 			);
 			path = Presenter;
@@ -647,6 +776,7 @@
 				572DD0AB1F1753EB00C7A62F /* DataSourceOld.swift in Sources */,
 				573CAB0C1F18BA33000615F1 /* BottomScrollConstrait.swift in Sources */,
 				572DE03B1F1F49740064C70D /* CoreAssembly.swift in Sources */,
+				57D0AD491F28E0880089D3D4 /* CollectionViewManagerOutput.swift in Sources */,
 				5748F6F91F1DFC4200D2B7FE /* RepositoryService.swift in Sources */,
 				5752AA3C1F162259005D4F62 /* TextViewCell.swift in Sources */,
 				572DD0AD1F176CB800C7A62F /* Types.swift in Sources */,
@@ -658,6 +788,8 @@
 				5748F6FB1F1E16A500D2B7FE /* TypesForRealm.swift in Sources */,
 				5752AA3E1F16228C005D4F62 /* PhotoViewCell.swift in Sources */,
 				5748F6FD1F1E1B4700D2B7FE /* DataSource.swift in Sources */,
+				57D0AD391F28896F0089D3D4 /* ImageTaskCreationScreenModuleOutput.swift in Sources */,
+				57D0AD421F28D7190089D3D4 /* CollectionViewManager.swift in Sources */,
 				5700235B1F262CF6002F89AB /* NetworkLayer.swift in Sources */,
 				024FCEB614C17A6FCEF861AA /* MainScreenViewInput.swift in Sources */,
 				880C4C62A2D754AA49AC31BF /* MainScreenViewOutput.swift in Sources */,
@@ -665,6 +797,7 @@
 				F0B9CBC6B050C005F126A702 /* MainScreenModuleInput.swift in Sources */,
 				14AD6574822706E73128760B /* MainScreenPresenter.swift in Sources */,
 				1A7115B461FE2EE072D728A1 /* MainScreenInteractorInput.swift in Sources */,
+				57D0AD351F2884CA0089D3D4 /* DateTaskCreationScreenDateTaskCreationScreenModuleOutput.swift in Sources */,
 				7C511E3426AE2B0B46CA30FF /* MainScreenInteractorOutput.swift in Sources */,
 				FBF8F041BA92B02B22DAF4A7 /* MainScreenInteractor.swift in Sources */,
 				DA1B65D8DF7C7152BC22FC6F /* MainScreenRouterInput.swift in Sources */,
@@ -674,6 +807,7 @@
 				682301CAB4A6887694D9426A /* DateTaskCreationScreenViewInput.swift in Sources */,
 				78D0952B877AD25476734AFC /* DateTaskCreationScreenViewOutput.swift in Sources */,
 				943F0E00B0189A2F786BE597 /* DateTaskCreationScreenViewController.swift in Sources */,
+				57D0AD471F28E04E0089D3D4 /* SearchResultsCollectionViewCell.swift in Sources */,
 				5740C0581F21E0DF008B57BE /* TableViewManagerOutput.swift in Sources */,
 				C4227B8ED8A6657B2DF49E73 /* DateTaskCreationScreenModuleInput.swift in Sources */,
 				4D16A01D9B026FBBB91020F7 /* DateTaskCreationScreenPresenter.swift in Sources */,
@@ -683,6 +817,7 @@
 				6AD19E8C8B61891A4381AF32 /* DateTaskCreationScreenRouterInput.swift in Sources */,
 				FD7B079DCCBD2FA91C3F409F /* DateTaskCreationScreenRouter.swift in Sources */,
 				C2F9AF3C5EDD4F639D1827B3 /* DateTaskCreationScreenConfigurator.swift in Sources */,
+				57D0AD3D1F28AA550089D3D4 /* FlickrSearcher.swift in Sources */,
 				746ED91D12B83F0C697699A4 /* DateTaskCreationScreenInitializer.swift in Sources */,
 				A1B4588586064F7B4B12B83A /* TextTaskCreationScreenViewInput.swift in Sources */,
 				583627A7A8819F09E4073DF4 /* TextTaskCreationScreenViewOutput.swift in Sources */,
@@ -693,6 +828,7 @@
 				C7FEAABB38CC278C9A70F9E4 /* TextTaskCreationScreenInteractorOutput.swift in Sources */,
 				C8DE2EB96440369D8D33FE13 /* TextTaskCreationScreenInteractor.swift in Sources */,
 				573B07A41F20DCDB00769485 /* Picker.swift in Sources */,
+				57D0AD3B1F288F850089D3D4 /* TextTaskCreationScreenModuleOutput.swift in Sources */,
 				C76B3D6A8A0347EC2D69BCEF /* TextTaskCreationScreenRouterInput.swift in Sources */,
 				2A2CD7D5657683FBDABE0A89 /* TextTaskCreationScreenRouter.swift in Sources */,
 				565BE701F2D32107B4BE5D12 /* TextTaskCreationScreenConfigurator.swift in Sources */,
@@ -705,11 +841,24 @@
 				6E77E715202C2F27571880A4 /* ImageTaskCreationScreenPresenter.swift in Sources */,
 				4F39BA33281FBC9EDF7E8021 /* ImageTaskCreationScreenInteractorInput.swift in Sources */,
 				C5FA5DDB02E5F43DA4CF4ECC /* ImageTaskCreationScreenInteractorOutput.swift in Sources */,
+				57D0AD441F28D72F0089D3D4 /* CollectionViewManagerInput.swift in Sources */,
 				EDDFBF931187DDBA021A61D9 /* ImageTaskCreationScreenInteractor.swift in Sources */,
 				F24B4B67D8755A24BD0F1991 /* ImageTaskCreationScreenRouterInput.swift in Sources */,
 				DBACC734C6107F6E36ACB4D4 /* ImageTaskCreationScreenRouter.swift in Sources */,
 				3A89966A8D2908AA340BB377 /* ImageTaskCreationScreenConfigurator.swift in Sources */,
 				2C78176F014796EB594389AD /* ImageTaskCreationScreenInitializer.swift in Sources */,
+				B8A25B465ED0C8D8AB48E0E5 /* FlickerViewInput.swift in Sources */,
+				2A91972BAF81286D0428B5E7 /* FlickerViewOutput.swift in Sources */,
+				E77A3BA1F4735D2EC0BAAA66 /* FlickerViewController.swift in Sources */,
+				359DBC80F91C4943AD3EDB5F /* FlickerModuleInput.swift in Sources */,
+				A083BEAD90E39A4396112FB3 /* FlickerPresenter.swift in Sources */,
+				3DC2EE8F488EC464835340F8 /* FlickerInteractorInput.swift in Sources */,
+				2722D29CB6C11328AF2AEEC3 /* FlickerInteractorOutput.swift in Sources */,
+				4096522EECB36A3F3E91FDA3 /* FlickerInteractor.swift in Sources */,
+				7D53F6FE0DE98E70E350AB03 /* FlickerRouterInput.swift in Sources */,
+				A9F8B60D3EF5B07817782CF1 /* FlickerRouter.swift in Sources */,
+				3CADBE736B5B8973F2040DFB /* FlickerConfigurator.swift in Sources */,
+				A71AD5F216EC72659A5241C1 /* FlickerInitializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -835,6 +984,10 @@
 			baseConfigurationReference = F7FE658F77ED74E1852A1CE8 /* Pods-TrainingToDoList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
+				);
 				INFOPLIST_FILE = TrainingToDoList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sml.TrainingToDoList;
@@ -848,6 +1001,10 @@
 			baseConfigurationReference = BFD3705F2BEFD318968D8794 /* Pods-TrainingToDoList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
+				);
 				INFOPLIST_FILE = TrainingToDoList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sml.TrainingToDoList;

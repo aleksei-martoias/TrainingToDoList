@@ -10,4 +10,5 @@ import  ViperKit
 
 protocol ImageTaskCreationScreenModuleInput: class, ModuleInput {
     func setObjectForEdit(_ data: ImageHeader?)
+    func setParentPresenter(_ presenter: MainScreenPresenter)
 }

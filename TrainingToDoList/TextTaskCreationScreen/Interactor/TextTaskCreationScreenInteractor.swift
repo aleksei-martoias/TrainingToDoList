@@ -21,8 +21,9 @@ extension TextTaskCreationScreenInteractor: TextTaskCreationScreenInteractorInpu
         if editOb != nil {
             editOb?.update(field: data.headerLabel!, data.textLabel!)
         } else {
-            networkLayer.post(task: data, success: { (_) in
-                self.dataSource.pushData(push: data.headerLabel!, push: data.textLabel!)
+            networkLayer.post(task: data, success: { (_ id: Int) in
+                self.dataSource.pushData(push: data.headerLabel!, push: data.textLabel!, id: id)
+                self.output.reloadTableR()
                 self.output.popController()
             }, error: {(error: Error) -> Void in
                 self.output.showAlert()

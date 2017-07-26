@@ -14,4 +14,6 @@ protocol DateTaskCreationScreenInteractorOutput: class {
     
     func showAlert()
     
+    func reloadTableR()
+    
 }

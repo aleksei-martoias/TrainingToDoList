@@ -12,6 +12,7 @@ class TextTaskCreationScreenPresenter: TextTaskCreationScreenModuleInput {
     weak var view: TextTaskCreationScreenViewInput!
     var interactor: TextTaskCreationScreenInteractorInput!
     var router: TextTaskCreationScreenRouterInput!
+    var parentPresenter: TextTaskCreationScreenModuleOutput?
 
     func viewIsReady() {
 
@@ -19,6 +20,10 @@ class TextTaskCreationScreenPresenter: TextTaskCreationScreenModuleInput {
     
     func setObjectForEdit(_ data: HeaderText?) {
         interactor.setObjectForEdit(data)
+    }
+    
+    func setParentPresenter(_ presenter: MainScreenPresenter) {
+        parentPresenter = presenter
     }
 }
 
@@ -43,5 +48,9 @@ extension TextTaskCreationScreenPresenter: TextTaskCreationScreenInteractorOutpu
     
     func showAlert() {
         view.showAlert()
+    }
+    
+    func reloadTableR() {
+        parentPresenter?.reloadTableR()
     }
 }

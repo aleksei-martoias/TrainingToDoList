@@ -14,7 +14,7 @@ protocol NetworkLayerInput {
 }
 
 protocol NetworkLayerInputInput {
-    func post(task name: NetworkLayerInput, success: @escaping (Any)->(), error: @escaping (Error)->())
+    func post(task name: NetworkLayerInput, success: @escaping (_ id: Int)->(), error: @escaping (Error)->())
     
     func get(synch: @escaping ([Any]) -> ())
     
@@ -23,11 +23,14 @@ protocol NetworkLayerInputInput {
 }
 
 class NetworkLayer: NetworkLayerInputInput {
-    func post(task name: NetworkLayerInput, success: @escaping (Any)->(), error: @escaping (Error)->()) {
+    func post(task name: NetworkLayerInput, success: @escaping (_ id: Int)->(), error: @escaping (Error)->()) {
         request("http://localhost:3000/posts", method: .post, parameters: name.getParams(), encoding: JSONEncoding.default).responseJSON() { response in
             switch response.result {
             case .success(let value):
-                success(value)
+                if let dict = value as? [String : Any],
+                    let id = dict["id"] as? Int {
+                        success(id)
+                }
             case .failure(let errorr):
                 error(errorr)
             }
@@ -41,14 +44,14 @@ class NetworkLayer: NetworkLayerInputInput {
                 if let dict = value as? [[String : Any]] {
                     synch(self.parse(dict: dict))
                 }
-            case .failure(let error):
-                break
+            case .failure(let errorr):
+                errorr
             }
         }
     }
     
     func delete(id: Int) {
-        request("http://localhost:3000/posts/" + "/(id)", method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: nil)
+        request("http://localhost:3000/posts/" + String(id), method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: nil)
     }
     
     func parse(dict: [[String : Any]]) -> [Any] {

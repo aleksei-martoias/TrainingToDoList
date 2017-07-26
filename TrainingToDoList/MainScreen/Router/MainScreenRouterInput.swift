@@ -9,10 +9,10 @@
 import Foundation
 
 protocol MainScreenRouterInput {
-    func openDateTaskScreen(objectForEdit: Date?)
+    func openDateTaskScreen(objectForEdit: Date?, presenter: MainScreenPresenter)
     
-    func openImageTaskScreen(objectForEdit: ImageHeader?)
+    func openImageTaskScreen(objectForEdit: ImageHeader?, presenter: MainScreenPresenter)
     
-    func openTextTaskScreen(objectForEdit: HeaderText?)
+    func openTextTaskScreen(objectForEdit: HeaderText?, presenter: MainScreenPresenter)
     
 }

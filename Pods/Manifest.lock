@@ -32,6 +32,9 @@ PODS:
   - Realm/Headers (2.8.3)
   - RealmSwift (2.8.3):
     - Realm (= 2.8.3)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
   - ViperKit (0.8.2):
     - ViperKit/Core (= 0.8.2)
   - ViperKit/Core (0.8.2)
@@ -50,6 +53,7 @@ DEPENDENCIES:
   - ObjectMapper+Realm
   - PromiseKit
   - RealmSwift
+  - SDWebImage (~> 4.0)
   - ViperKit
   - ViperKit/Dip
   - ViperKit/PKHUD
@@ -65,8 +69,9 @@ SPEC CHECKSUMS:
   PromiseKit: 00e8886881f151c7e573d06b437915b0bb2970ec
   Realm: 3601ef091c8c499a31101d8563b991e75546cdce
   RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   ViperKit: f01616cbd3e6ad489812c600d1af97f0c17c5185
 
-PODFILE CHECKSUM: f61e43c1ddc5f5dbb3741e06827cc60fc0fa89ef
+PODFILE CHECKSUM: '02694b393614b0b5ca2a1c89f6918aca7385cc13'
 
 COCOAPODS: 1.2.1

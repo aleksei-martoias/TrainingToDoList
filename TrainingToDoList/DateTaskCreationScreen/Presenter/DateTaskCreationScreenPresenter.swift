@@ -7,11 +7,12 @@
 //
 import ViperKit
 
-class DateTaskCreationScreenPresenter: DateTaskCreationScreenModuleInput {
+class DateTaskCreationScreenPresenter {
 
     weak var view: DateTaskCreationScreenViewInput!
     var interactor: DateTaskCreationScreenInteractorInput!
     var router: DateTaskCreationScreenRouterInput!
+    var parentPresenter: DateTaskCreationScreenModuleOutput?
     
     
     func viewIsReady() {
@@ -38,6 +39,12 @@ extension DateTaskCreationScreenPresenter: DateTaskCreationScreenViewOutput {
     }
 }
 
+extension DateTaskCreationScreenPresenter: DateTaskCreationScreenModuleInput {
+    func setParentPresenter(_ presenter: MainScreenPresenter) {
+        self.parentPresenter = presenter
+    }
+}
+
 extension DateTaskCreationScreenPresenter: DateTaskCreationScreenInteractorOutput {
     
     func popController() {
@@ -46,6 +53,10 @@ extension DateTaskCreationScreenPresenter: DateTaskCreationScreenInteractorOutpu
     
     func showAlert() {
         view.showAlert()
+    }
+    
+    func reloadTableR() {
+        parentPresenter?.reloadTableR()
     }
     
 }

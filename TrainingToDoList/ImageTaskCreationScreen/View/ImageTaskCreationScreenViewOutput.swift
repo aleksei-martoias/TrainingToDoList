@@ -15,5 +15,7 @@ protocol ImageTaskCreationScreenViewOutput {
 
     func showPicker(_ controller: UIViewController)
     
+    func showPhotoSearch()
+    
     func viewIsReady()
 }

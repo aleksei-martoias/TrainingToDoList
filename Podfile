@@ -17,4 +17,5 @@ target 'TrainingToDoList' do
   pod 'Alamofire'
   pod 'PromiseKit'
   pod 'ObjectMapper+Realm'
+  pod 'SDWebImage', '~> 4.0'
 end

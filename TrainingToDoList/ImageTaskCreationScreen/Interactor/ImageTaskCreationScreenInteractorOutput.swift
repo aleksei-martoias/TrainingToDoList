@@ -17,4 +17,6 @@ protocol ImageTaskCreationScreenInteractorOutput: class {
     
     func showAlert()
     
+    func reloadTableR()
+    
 }

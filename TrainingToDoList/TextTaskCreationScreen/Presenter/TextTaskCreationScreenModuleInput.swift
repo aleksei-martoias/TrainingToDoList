@@ -9,4 +9,5 @@ import ViperKit
 
 protocol TextTaskCreationScreenModuleInput: class, ModuleInput {
     func setObjectForEdit(_ data: HeaderText?)
+    func setParentPresenter(_ presenter: MainScreenPresenter)
 }

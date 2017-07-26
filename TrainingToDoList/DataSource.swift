@@ -26,11 +26,11 @@ protocol DataSource {
     
     func clean()
     
-    func pushData(push header: String, push text: String)
+    func pushData(push header: String, push text: String, id: Int)
     
-    func pushData(push header: String, push img: Data)
+    func pushData(push header: String, push img: Data, id: Int)
     
-    func pushData(push date: String)
+    func pushData(push date: String, id: Int)
     
     func updateData(setData data: Any)
     
@@ -88,27 +88,27 @@ class DataSourceImplementation: DataSource {
     }
     
     //Push
-    func pushData(push header: String, push text: String) {
+    func pushData(push header: String, push text: String, id: Int) {
         let pushingHT = HeaderText()
         pushingHT.headerLabel = header
         pushingHT.textLabel = text
-        pushingHT.id = generate()
+        pushingHT.id = String(id)
         arHeaderText = [pushingHT]
     }
 
-    func pushData(push header: String, push img: Data) {
+    func pushData(push header: String, push img: Data, id: Int) {
         let pushingIH = ImageHeader()
         pushingIH.headerLabel = header
         //pushingIH.image = convertImageToData(convert: img)
         pushingIH.image = img
-        pushingIH.id = generate()
+        pushingIH.id = String(id)
         arImageHeader = [pushingIH]
     }
 
-    func pushData(push date: String) {
+    func pushData(push date: String, id: Int) {
         let pushingDT = Date()
         pushingDT.dateLabel = date
-        pushingDT.id = generate()
+        pushingDT.id = String(id)
         arDate = [pushingDT]
     }
     

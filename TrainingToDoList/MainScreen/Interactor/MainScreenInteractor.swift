@@ -48,11 +48,11 @@ extension MainScreenInteractor: MainScreenInteractorInput {
         networkLayer.get(synch: { (data: [Any]) in
             for item in data {
                 if let data = item as? HeaderText {
-                    self.dataSource.pushData(push: data.headerLabel!, push: data.textLabel!)
+                    self.dataSource.pushData(push: data.headerLabel!, push: data.textLabel!, id: Int(data.id!) ?? 0)
                 } else if let data = item as? ImageHeader {
                     
                 } else if let data = item as? Date {
-                    self.dataSource.pushData(push: data.dateLabel!)
+                    self.dataSource.pushData(push: data.dateLabel!, id: Int(data.id!) ?? 0)
                 }
             }
             self.output.reloadTable()

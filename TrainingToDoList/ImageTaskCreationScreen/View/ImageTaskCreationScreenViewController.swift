@@ -23,7 +23,8 @@ class ImageTaskCreationScreenViewController: BaseViewController, ModuleInputProv
         }
     }
     @IBAction func selectPhotoAction(_ sender: UIButton) {
-        output.showPicker(self)
+        output.showPhotoSearch()
+        //output.showPicker(self)
     }
 
     // MARK: Life cycle

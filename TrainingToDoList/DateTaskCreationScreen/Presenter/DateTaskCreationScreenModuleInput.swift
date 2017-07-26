@@ -9,4 +9,5 @@ import ViperKit
 
 protocol DateTaskCreationScreenModuleInput: class, ModuleInput {
     func setObjectForEdit(_ date: Date?)
+    func setParentPresenter(_ presenter: MainScreenPresenter)
 }

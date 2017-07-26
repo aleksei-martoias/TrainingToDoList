@@ -20,6 +20,7 @@ class ImageTaskCreationScreenModuleConfigurator {
     private func configure(viewController: ImageTaskCreationScreenViewController) {
 
         let router = ImageTaskCreationScreenRouter()
+        router.transitionHandler = viewController
 
         let presenter = ImageTaskCreationScreenPresenter()
         presenter.view = viewController

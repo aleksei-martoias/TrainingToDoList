@@ -309,6 +309,7 @@
                     <connections>
                         <outlet property="imageView" destination="Exd-j8-mWe" id="uZ7-bg-17F"/>
                         <outlet property="titleField" destination="Qxn-xP-8GY" id="kMw-ef-I6F"/>
+                        <segue destination="a6h-k8-eQC" kind="show" identifier="PhotoSearchShow" id="odf-xy-Qbn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ycz-Pa-dao" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -318,7 +319,75 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="1480.8" y="136.28185907046478"/>
+            <point key="canvasLocation" x="1481" y="137"/>
+        </scene>
+        <!--Flicker View Controller-->
+        <scene sceneID="mvA-64-gIa">
+            <objects>
+                <viewController id="a6h-k8-eQC" customClass="FlickerViewController" customModule="TrainingToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QlW-aH-Gef"/>
+                        <viewControllerLayoutGuide type="bottom" id="5II-BP-b4g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SrJ-wt-sK7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4JB-fs-m24">
+                                <rect key="frame" x="16" y="0.0" width="343" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TrU-QS-bLs">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="E7R-Db-CG4" customClass="SearchResultsCollectionViewCell" customModule="TrainingToDoList" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tDf-Mt-4FB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="tDf-Mt-4FB" firstAttribute="top" secondItem="E7R-Db-CG4" secondAttribute="top" id="QUg-gw-kiJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="tDf-Mt-4FB" secondAttribute="bottom" id="cbY-f5-uye"/>
+                                            <constraint firstItem="tDf-Mt-4FB" firstAttribute="leading" secondItem="E7R-Db-CG4" secondAttribute="leading" id="eVm-n6-xDj"/>
+                                            <constraint firstAttribute="trailing" secondItem="tDf-Mt-4FB" secondAttribute="trailing" id="uyK-fb-HM4"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="tDf-Mt-4FB" id="cs2-hL-hT7"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4JB-fs-m24" firstAttribute="top" secondItem="SrJ-wt-sK7" secondAttribute="topMargin" id="ZK7-aw-dhn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4JB-fs-m24" secondAttribute="trailing" id="fit-8d-tWx"/>
+                            <constraint firstItem="5II-BP-b4g" firstAttribute="top" secondItem="4JB-fs-m24" secondAttribute="bottom" id="o3t-jL-LZW"/>
+                            <constraint firstItem="4JB-fs-m24" firstAttribute="leading" secondItem="SrJ-wt-sK7" secondAttribute="leadingMargin" id="shm-oZ-qXk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collection" destination="4JB-fs-m24" id="eRY-3H-dkd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rPP-Bj-H3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="R8d-Vj-9ku" customClass="FlickerModuleInitializer" customModule="TrainingToDoList" customModuleProvider="target">
+                    <connections>
+                        <outlet property="flickerViewController" destination="a6h-k8-eQC" id="OTN-zM-7RB"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="2361" y="137"/>
         </scene>
         <!--Datetaskcreationscreen View Controller-->
         <scene sceneID="RY7-bq-wzN">

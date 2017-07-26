@@ -39,7 +39,7 @@ class HeaderText: Object, Mappable {
     func mapping(map: Map) {
         headerLabel <- map["headerLabel"]
         textLabel <- map["textLabel"]
-        id <- map["id"]
+        id <- (map["id"], IntTransform())
     }
     
     override static func primaryKey() -> String? {

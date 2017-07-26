@@ -20,8 +20,9 @@ extension DateTaskCreationScreenInteractor: DateTaskCreationScreenInteractorInpu
         if editOb != nil {
             editOb?.update(field: data.dateLabel!)
         } else {
-            networkLayer.post(task: data, success: { (_) in
-                self.dataSource.pushData(push: data.dateLabel!)
+            networkLayer.post(task: data, success: { (_ id: Int) in
+                self.dataSource.pushData(push: data.dateLabel!, id: id)
+                self.output.reloadTableR()
                 self.output.popController()
             }, error: {(error: Error) -> Void in
                 self.output.showAlert()
